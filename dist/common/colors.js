@@ -216,3 +216,6 @@ export function registerPalette(p) {
 export function getPalettes() {
     return availablePalettes;
 }
+export function getPaletteCategories() {
+    return [...new Set(availablePalettes.map((p) => p.name.toLowerCase().replace(/ +/g, "-")))];
+}

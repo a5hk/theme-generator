@@ -26,7 +26,7 @@ export class TextmateTheme {
     });
   }
 
-  getRules(style: string): textmateRule[] {
+  getRules(italic: boolean): textmateRule[] {
     const rules: textmateRule[] = [
       {
         name: "variable",
@@ -526,7 +526,7 @@ export class TextmateTheme {
       },
     ];
 
-    if (style.toLowerCase() === "italic") {
+    if (italic) {
       return this.#italic(rules);
     }
     return rules;

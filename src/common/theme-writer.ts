@@ -2,10 +2,9 @@ import fs from "fs";
 import path from "path";
 
 export function themeWriter(outFile: string, theme: string, message: string): void {
-  const baseOutputDir = "./color-themes";
+  const baseOutputDir = "./../color-themes";
   const output = path.resolve(baseOutputDir, outFile);
-
-  console.log(output);
+  ensureDirExists(path.dirname(output));
 
   fs.writeFile(output, theme, (err) => {
     if (err) {
@@ -13,4 +12,10 @@ export function themeWriter(outFile: string, theme: string, message: string): vo
     }
     console.log(message);
   });
+}
+
+function ensureDirExists(dir: string) {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
 }

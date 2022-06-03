@@ -254,6 +254,10 @@ export function registerPalette(p: Palette) {
   availablePalettes.push(p);
 }
 
-export function getPalettes() {
+export function getPalettes(): Palette[] {
   return availablePalettes;
+}
+
+export function getPaletteCategories(): string[] {
+  return [...new Set(availablePalettes.map((p) => p.name.toLowerCase().replace(/ +/g, "-")))];
 }

@@ -1,4 +1,4 @@
-import { Palette, getPalettes } from "../common/colors.js";
+import { Palette, getPalettes, getPaletteCategories } from "../common/colors.js";
 import { themeWriter } from "../common/theme-writer.js";
 
 interface WindowsTerminalSetting {
@@ -38,13 +38,16 @@ export function windowsTerminalColors(palette: Palette): string {
 }
 
 export function windowsTerminalColorScheme(): void {
+  const categories = getPaletteCategories();
   const palettes = getPalettes();
 
-  for (const p of palettes) {
-    themeWriter(
-      `windows-terminal/${p.filename()}.json`,
-      windowsTerminalColors(p),
-      "Windows Terminal color scheme generated."
-    );
+  for (const cat of categories) {
+    for (const p of palettes) {
+      themeWriter(
+        `${cat}/windows-terminal/${p.filename()}.json`,
+        windowsTerminalColors(p),
+        "Windows Terminal color scheme generated."
+      );
+    }
   }
 }
