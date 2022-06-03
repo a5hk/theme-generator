@@ -1,3 +1,5 @@
+// Not working, only for reference. Will be removed
+
 import { exec } from "child_process";
 import { dirname } from "path";
 import { promisify } from "util";
