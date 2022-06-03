@@ -6,10 +6,10 @@
   "publisher": "a5hk",
   "author": "a5hk",
   "license": "MIT",
-  "homepage": "https://github.com/a5hk/night-coder",
+  "homepage": "https://github.com/a5hk/theme-generator",
   "repository": {
     "type": "git",
-    "url": "https://github.com/a5hk/night-coder"
+    "url": "https://github.com/a5hk/theme-generator"
   },
   "type": "module",
   "scripts": {
