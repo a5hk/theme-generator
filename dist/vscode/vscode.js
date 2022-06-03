@@ -1,15 +1,13 @@
 import path from "path";
-import { getPalettes, getPaletteCategories } from "../common/colors.js";
+import { getPaletteCategories } from "../common/colors.js";
 import { themeWriter } from "../common/theme-writer.js";
 import { Ice, NightCoder } from "./extension.js";
-import { VSTheme } from "./theme.js";
 function fileWriter(content, category, filepath) {
     const baseOutputDir = "vscode";
     const p = path.normalize(path.join(category, baseOutputDir, filepath));
     themeWriter(p, content, `Generated ${p}.`);
 }
 export function vscodeThemesWriter() {
-    const palettes = getPalettes();
     const categories = getPaletteCategories();
     let ext;
     for (const cat of categories) {
@@ -19,14 +17,8 @@ export function vscodeThemesWriter() {
         else {
             ext = new Ice();
         }
-        for (const p of palettes) {
-            for (const style of [false, true]) {
-                for (const contrast of [false, true]) {
-                    const t = new VSTheme(p, { contrast: contrast, italic: style, uiTheme: "vs-dark" });
-                    ext.addTheme(t);
-                    fileWriter(t.generateTheme(), cat, t.path);
-                }
-            }
+        for (const t of ext.themes) {
+            fileWriter(t.generateTheme(), cat, t.path);
         }
         fileWriter(ext.generateManifest(), cat, "package.json");
         fileWriter(ext.generateColorPaletteMap(), cat, "ColorPalette.md");

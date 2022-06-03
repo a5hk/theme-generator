@@ -1,3 +1,5 @@
+import { getPalettes } from "../common/colors.js";
+import { VSTheme } from "./theme.js";
 export class Extension {
     constructor() {
         this.themes = [];
@@ -16,10 +18,21 @@ export class Extension {
         this.repository = { type: "git", url: "" };
         this.categories = ["Themes"];
         this.contributes = { themes: [] };
-        Object.defineProperty(this, "theme", { enumerable: false });
+        Object.defineProperty(this, "themes", { enumerable: false });
     }
     get palettes() {
         return this.themes.map((t) => t.palette);
+    }
+    createThemes() {
+        const palettes = getPalettes().filter((p) => p.name === this.displayName);
+        for (const p of palettes) {
+            for (const style of [false, true]) {
+                for (const contrast of [false, true]) {
+                    const t = new VSTheme(p, { contrast: contrast, italic: style, uiTheme: "vs-dark" });
+                    this.addTheme(t);
+                }
+            }
+        }
     }
     addTheme(theme) {
         this.themes.push(theme);
@@ -45,7 +58,7 @@ export class Extension {
 }
 export class NightCoder extends Extension {
     constructor() {
-        super(...arguments);
+        super();
         this.name = "night-coder";
         this.displayName = "Night Coder";
         this.description = "A dark theme for Night Coders";
@@ -53,6 +66,7 @@ export class NightCoder extends Extension {
         this.keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
         this.homepage = "https://github.com/a5hk/night-coder";
         this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
+        this.createThemes();
     }
     generateReadme() {
         const codeBlock = [
@@ -112,13 +126,16 @@ ${codeBlock}
 }
 export class Ice extends Extension {
     constructor() {
-        super(...arguments);
+        super();
+        this.preview = true;
         this.name = "ice";
         this.displayName = "Ice";
         this.description = "Cold as Ice";
         this.version = "0.6.0";
-        this.keywords = ["Ice", ...super.keywords, "Cold"];
-        this.homepage = "https://github.com/a5hk/night-coder";
-        this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
+        this.keywords = ["Ice", "Cold", "Dark", "Borderless", "Italic", "Contrast"];
+        this.homepage = "https://github.com/a5hk/ice";
+        this.repository = { type: "git", url: "https://github.com/a5hk/ice" };
+        this.galleryBanner.color = "";
+        this.createThemes();
     }
 }

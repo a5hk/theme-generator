@@ -15,7 +15,9 @@ export class VSTheme {
             this.palette.fullName(),
             this.options.contrast ? "Contrast" : "",
             this.options.italic ? "Italic" : "",
-        ].join(" ");
+        ]
+            .join(" ")
+            .trim();
     }
     get workbenchColors() {
         if (this.options.contrast) {

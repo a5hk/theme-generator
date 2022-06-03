@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 export function themeWriter(outFile, theme, message) {
-    const baseOutputDir = "./color-themes";
+    const baseOutputDir = "./../color-themes";
     const output = path.resolve(baseOutputDir, outFile);
     ensureDirExists(path.dirname(output));
     fs.writeFile(output, theme, (err) => {

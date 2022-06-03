@@ -1,4 +1,4 @@
-import { Palette } from "../common/colors.js";
+import { getPalettes, Palette } from "../common/colors.js";
 import { VSTheme, VSThemeManifest } from "./theme.js";
 
 export class Extension {
@@ -38,6 +38,19 @@ export class Extension {
     return this.themes.map((t) => t.palette);
   }
 
+  createThemes() {
+    const palettes = getPalettes().filter((p) => p.name === this.displayName);
+
+    for (const p of palettes) {
+      for (const style of [false, true]) {
+        for (const contrast of [false, true]) {
+          const t = new VSTheme(p, { contrast: contrast, italic: style, uiTheme: "vs-dark" });
+          this.addTheme(t);
+        }
+      }
+    }
+  }
+
   addTheme(theme: VSTheme) {
     this.themes.push(theme);
   }
@@ -67,13 +80,29 @@ export class Extension {
 }
 
 export class NightCoder extends Extension {
-  name = "night-coder";
-  displayName = "Night Coder";
-  description = "A dark theme for Night Coders";
-  version = "4.2.0";
-  keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
-  homepage = "https://github.com/a5hk/night-coder";
-  repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
+  constructor() {
+    super();
+
+    this.name = "night-coder";
+    this.displayName = "Night Coder";
+    this.description = "A dark theme for Night Coders";
+    this.version = "4.2.0";
+    this.keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
+    this.homepage = "https://github.com/a5hk/night-coder";
+    this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
+
+    this.createThemes();
+    // const palettes = getPalettes().filter((p) => p.name == "Night Coder");
+
+    // for (const p of palettes) {
+    //   for (const style of [false, true]) {
+    //     for (const contrast of [false, true]) {
+    //       const t = new VSTheme(p, { contrast: contrast, italic: style, uiTheme: "vs-dark" });
+    //       this.addTheme(t);
+    //     }
+    //   }
+    // }
+  }
 
   generateReadme(): string {
     const codeBlock = [
@@ -136,12 +165,30 @@ ${codeBlock}
 }
 
 export class Ice extends Extension {
-  name = "ice";
-  displayName = "Ice";
-  description = "Cold as Ice";
   preview = true;
-  version = "0.6.0";
-  keywords = ["Ice", "Cold", "Dark", "Borderless", "Italic", "Contrast"];
-  homepage = "https://github.com/a5hk/ice";
-  repository = { type: "git", url: "https://github.com/a5hk/ice" };
+
+  constructor() {
+    super();
+
+    this.name = "ice";
+    this.displayName = "Ice";
+    this.description = "Cold as Ice";
+    this.version = "0.6.0";
+    this.keywords = ["Ice", "Cold", "Dark", "Borderless", "Italic", "Contrast"];
+    this.homepage = "https://github.com/a5hk/ice";
+    this.repository = { type: "git", url: "https://github.com/a5hk/ice" };
+    this.galleryBanner.color = "";
+
+    this.createThemes();
+    // const palettes = getPalettes().filter((p) => p.name == "Ice");
+
+    // for (const p of palettes) {
+    //   for (const style of [false, true]) {
+    //     for (const contrast of [false, true]) {
+    //       const t = new VSTheme(p, { contrast: contrast, italic: style, uiTheme: "vs-dark" });
+    //       this.addTheme(t);
+    //     }
+    //   }
+    // }
+  }
 }

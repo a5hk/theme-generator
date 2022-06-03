@@ -1,7 +1,7 @@
 import { colorPaletteFactory, Palette, Color, registerPalette } from "./colors.js";
 
 function mainVariant(): Palette {
-  const p = new (colorPaletteFactory("#012841"))("Ice", "");
+  const p = new (colorPaletteFactory("#012841"))("Ice", "Main");
   p.contrastBackground = new Color("#012237");
 
   // token colors
