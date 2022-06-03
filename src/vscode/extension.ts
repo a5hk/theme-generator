@@ -31,7 +31,7 @@ export class Extension {
   } = { themes: [] };
 
   constructor() {
-    Object.defineProperty(this, "theme", { enumerable: false });
+    Object.defineProperty(this, "themes", { enumerable: false });
   }
 
   get palettes(): Palette[] {
@@ -139,8 +139,9 @@ export class Ice extends Extension {
   name = "ice";
   displayName = "Ice";
   description = "Cold as Ice";
+  preview = true;
   version = "0.6.0";
-  keywords = ["Ice", ...super.keywords, "Cold"];
-  homepage = "https://github.com/a5hk/night-coder";
-  repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
+  keywords = ["Ice", "Cold", "Dark", "Borderless", "Italic", "Contrast"];
+  homepage = "https://github.com/a5hk/ice";
+  repository = { type: "git", url: "https://github.com/a5hk/ice" };
 }

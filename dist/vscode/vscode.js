@@ -5,7 +5,7 @@ import { Ice, NightCoder } from "./extension.js";
 import { VSTheme } from "./theme.js";
 function fileWriter(content, category, filepath) {
     const baseOutputDir = "vscode";
-    const p = path.normalize(path.join(baseOutputDir, category, filepath));
+    const p = path.normalize(path.join(category, baseOutputDir, filepath));
     themeWriter(p, content, `Generated ${p}.`);
 }
 export function vscodeThemesWriter() {

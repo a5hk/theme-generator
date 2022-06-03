@@ -9,7 +9,7 @@ export class Extension {
         this.author = "a5hk";
         this.license = "MIT";
         this.icon = "icon.png";
-        this.keywords = ["Dark", "Borderless", "Italic", "Contrast"];
+        this.keywords = ["Dark"];
         this.galleryBanner = { color: "#030917", theme: "dark" };
         this.engines = { vscode: "^1.60.0" };
         this.homepage = "";
@@ -50,7 +50,7 @@ export class NightCoder extends Extension {
         this.displayName = "Night Coder";
         this.description = "A dark theme for Night Coders";
         this.version = "4.2.0";
-        this.keywords = ["NightCoder", "Night Coder", "Warm"];
+        this.keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
         this.homepage = "https://github.com/a5hk/night-coder";
         this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
     }
