@@ -47,13 +47,28 @@ export class Extension {
     generateReadme() {
         return this.name;
     }
+    variants() {
+        const pv = new Set();
+        for (const p of this.palettes) {
+            pv.add(p.variant);
+        }
+        return this.palettes.filter((p) => {
+            if (pv.has(p.variant)) {
+                pv.delete(p.variant);
+                return true;
+            }
+            return false;
+        });
+    }
     generateColorPaletteMap() {
         return `# [Night Coder](https://marketplace.visualstudio.com/items?itemName=a5hk.night-coder)
 
-  ## Color palettes
+## Color palettes
 
-  ${this.palettes.map((p) => p.toMarkdownTable()).join("\n\n")}
-  `;
+${this.variants()
+            .map((p) => p.toMarkdownTable())
+            .join("\n\n")}
+`;
     }
 }
 export class NightCoder extends Extension {

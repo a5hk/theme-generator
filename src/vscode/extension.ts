@@ -69,13 +69,32 @@ export class Extension {
     return this.name;
   }
 
+  variants(): Palette[] {
+    const pv = new Set();
+
+    for (const p of this.palettes) {
+      pv.add(p.variant);
+    }
+
+    return this.palettes.filter((p) => {
+      if (pv.has(p.variant)) {
+        pv.delete(p.variant);
+        return true;
+      }
+      return false;
+    });
+  }
+
   generateColorPaletteMap(): string {
     return `# [Night Coder](https://marketplace.visualstudio.com/items?itemName=a5hk.night-coder)
 
-  ## Color palettes
+## Color palettes
 
-  ${this.palettes.map((p) => p.toMarkdownTable()).join("\n\n")}
-  `;
+${this.variants()
+  .map((p) => p.toMarkdownTable())
+  .join("\n\n")}
+`;
+    // ${this.palettes.map((p) => p.toMarkdownTable()).join("\n\n")}
   }
 }
 
@@ -92,16 +111,6 @@ export class NightCoder extends Extension {
     this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
 
     this.createThemes();
-    // const palettes = getPalettes().filter((p) => p.name == "Night Coder");
-
-    // for (const p of palettes) {
-    //   for (const style of [false, true]) {
-    //     for (const contrast of [false, true]) {
-    //       const t = new VSTheme(p, { contrast: contrast, italic: style, uiTheme: "vs-dark" });
-    //       this.addTheme(t);
-    //     }
-    //   }
-    // }
   }
 
   generateReadme(): string {
@@ -180,15 +189,5 @@ export class Ice extends Extension {
     this.galleryBanner.color = "";
 
     this.createThemes();
-    // const palettes = getPalettes().filter((p) => p.name == "Ice");
-
-    // for (const p of palettes) {
-    //   for (const style of [false, true]) {
-    //     for (const contrast of [false, true]) {
-    //       const t = new VSTheme(p, { contrast: contrast, italic: style, uiTheme: "vs-dark" });
-    //       this.addTheme(t);
-    //     }
-    //   }
-    // }
   }
 }

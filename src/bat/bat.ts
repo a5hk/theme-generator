@@ -71,7 +71,9 @@ export function batColorScheme(): void {
 
   for (const cat of categories) {
     for (const p of palettes) {
-      themeWriter(`${cat}/bat/${p.filename()}.tmTheme`, tmTheme(p), "Main bat color scheme generated.");
+      if (p.name === cat) {
+        themeWriter(`${cat}/bat/${p.filename()}.tmTheme`, tmTheme(p), "Main bat color scheme generated.");
+      }
     }
   }
 }

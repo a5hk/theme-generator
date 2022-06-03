@@ -43,11 +43,13 @@ export function windowsTerminalColorScheme(): void {
 
   for (const cat of categories) {
     for (const p of palettes) {
-      themeWriter(
-        `${cat}/windows-terminal/${p.filename()}.json`,
-        windowsTerminalColors(p),
-        "Windows Terminal color scheme generated."
-      );
+      if (p.name === cat) {
+        themeWriter(
+          `${cat}/windows-terminal/${p.filename()}.json`,
+          windowsTerminalColors(p),
+          "Windows Terminal color scheme generated."
+        );
+      }
     }
   }
 }

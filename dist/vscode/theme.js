@@ -17,6 +17,7 @@ export class VSTheme {
             this.options.italic ? "Italic" : "",
         ]
             .join(" ")
+            .replace(/ +/g, " ")
             .trim();
     }
     get workbenchColors() {
