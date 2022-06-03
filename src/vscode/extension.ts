@@ -12,7 +12,7 @@ export class Extension {
   author = "a5hk";
   license = "MIT";
   icon = "icon.png";
-  keywords: string[] = ["Dark", "Borderless", "Italic", "Contrast"];
+  keywords: string[] = ["Dark"];
   galleryBanner: {
     color: string;
     theme: "light" | "dark";
@@ -71,7 +71,7 @@ export class NightCoder extends Extension {
   displayName = "Night Coder";
   description = "A dark theme for Night Coders";
   version = "4.2.0";
-  keywords = ["NightCoder", "Night Coder", ...super.keywords, "Warm"];
+  keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
   homepage = "https://github.com/a5hk/night-coder";
   repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
 

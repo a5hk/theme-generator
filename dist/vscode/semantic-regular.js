@@ -9,7 +9,7 @@ export class SemanticTheme {
         _SemanticTheme_instances.add(this);
         this.palette = palette;
     }
-    getPaletteRules(style) {
+    getRules(style) {
         const rules = {
             class: {
                 __italic: true,
@@ -99,7 +99,7 @@ export class SemanticTheme {
                 foreground: this.palette.constantColor.code,
             },
         };
-        if (style.toLowerCase() === "italic") {
+        if (style) {
             return __classPrivateFieldGet(this, _SemanticTheme_instances, "m", _SemanticTheme_italic).call(this, rules);
         }
         return rules;

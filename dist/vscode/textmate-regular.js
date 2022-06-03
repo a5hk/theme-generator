@@ -9,7 +9,7 @@ export class TextmateTheme {
         _TextmateTheme_instances.add(this);
         this.palette = palette;
     }
-    getRules(style) {
+    getRules(italic) {
         const rules = [
             {
                 name: "variable",
@@ -503,7 +503,7 @@ export class TextmateTheme {
                 },
             },
         ];
-        if (style.toLowerCase() === "italic") {
+        if (italic) {
             return __classPrivateFieldGet(this, _TextmateTheme_instances, "m", _TextmateTheme_italic).call(this, rules);
         }
         return rules;
