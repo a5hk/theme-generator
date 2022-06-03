@@ -20,7 +20,7 @@ export class SemanticTheme {
     return theme;
   }
 
-  getPaletteRules(style: string): semanticRule {
+  getRules(style: boolean): semanticRule {
     const rules: semanticRule = {
       class: {
         __italic: true,
@@ -112,7 +112,7 @@ export class SemanticTheme {
       },
     };
 
-    if (style.toLowerCase() === "italic") {
+    if (style) {
       return this.#italic(rules);
     }
     return rules;

@@ -2,7 +2,7 @@ import xmlFormatter from "xml-formatter";
 
 import { themeWriter } from "../common/theme-writer.js";
 import { TextmateTheme } from "../vscode/textmate-regular.js";
-import { Palette, getPalettes } from "../common/colors.js";
+import { Palette, getPalettes, getPaletteCategories } from "../common/colors.js";
 
 export function tmTheme(palette: Palette): string {
   const textmateRule = new TextmateTheme(palette);
@@ -34,7 +34,7 @@ export function tmTheme(palette: Palette): string {
   ].join("\n");
 
   const theme = textmateRule
-    .getRules("")
+    .getRules(false)
     .map((r) => {
       return [
         "<dict>",
@@ -66,9 +66,12 @@ export function tmTheme(palette: Palette): string {
 }
 
 export function batColorScheme(): void {
+  const categories = getPaletteCategories();
   const palettes = getPalettes();
 
-  for (const p of palettes) {
-    themeWriter(`bat/${p.filename()}.tmTheme`, tmTheme(p), "Main bat color scheme generated.");
+  for (const cat of categories) {
+    for (const p of palettes) {
+      themeWriter(`${cat}/bat/${p.filename()}.tmTheme`, tmTheme(p), "Main bat color scheme generated.");
+    }
   }
 }

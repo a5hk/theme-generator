@@ -1,4 +1,4 @@
-import { Palette, getPalettes } from "../common/colors.js";
+import { Palette, getPalettes, getPaletteCategories } from "../common/colors.js";
 import { themeWriter } from "../common/theme-writer.js";
 
 export interface vimRule {
@@ -175,9 +175,12 @@ highlight Normal guifg=${palette.foregroundColor.code} guibg=${palette.backgroun
 }
 
 export function vimColorScheme(): void {
+  const categories = getPaletteCategories();
   const palettes = getPalettes();
 
-  for (const p of palettes) {
-    themeWriter(`vim/colors/${p.filename()}.vim`, vimColoring(p), "Vim color scheme generated.");
+  for (const cat of categories) {
+    for (const p of palettes) {
+      themeWriter(`${cat}/vim/colors/${p.filename()}.vim`, vimColoring(p), "Vim color scheme generated.");
+    }
   }
 }
