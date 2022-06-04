@@ -43,7 +43,7 @@ export function windowsTerminalColorScheme(): void {
 
   for (const cat of categories) {
     for (const p of palettes) {
-      if (p.name === cat) {
+      if (p.name.toLowerCase().replace(/ +/g, "-") === cat) {
         themeWriter(
           `${cat}/windows-terminal/${p.filename()}.json`,
           windowsTerminalColors(p),

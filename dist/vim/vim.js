@@ -158,7 +158,7 @@ export function vimColorScheme() {
     const palettes = getPalettes();
     for (const cat of categories) {
         for (const p of palettes) {
-            if (p.name === cat) {
+            if (p.name.toLowerCase().replace(/ +/g, "-") === cat) {
                 themeWriter(`${cat}/vim/colors/${p.filename()}.vim`, vimColoring(p), "Vim color scheme generated.");
             }
         }

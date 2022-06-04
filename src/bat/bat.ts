@@ -71,7 +71,7 @@ export function batColorScheme(): void {
 
   for (const cat of categories) {
     for (const p of palettes) {
-      if (p.name === cat) {
+      if (p.name.toLowerCase().replace(/ +/g, "-") === cat) {
         themeWriter(`${cat}/bat/${p.filename()}.tmTheme`, tmTheme(p), "Main bat color scheme generated.");
       }
     }

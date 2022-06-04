@@ -103,31 +103,31 @@ A dark theme for Night Coders. There are three main variants:
 
 Each of these main variants, has contrast and italic versions.
 
-![html](/screenshot/demo.gif)
+![html](../screenshot/demo.gif)
 
 ## Other versions
 
-- [vim](/color-themes/vim/colors/)
-- [bat](/color-themes/bat/)
-- [Windows Terminal](/color-themes/windows-terminal/)
+- [vim](../vim/colors/)
+- [bat](../bat/)
+- [Windows Terminal](../windows-terminal/)
 
 ## Color palettes
 
-- [Color Palettes](/color-themes/vscode/ColorPalette.md)
+- [Color Palettes](ColorPalette.md)
 
 ## Screenshots
 
 ### JavaScript [(Night Coder)]${this.previewURL("Night Coder")}
 
-![javascript](/screenshot/n-javascript.png)
+![javascript](../screenshot/n-javascript.png)
 
 ### Python [(Night Coder Warm Contrast)]${this.previewURL("Night Coder Warm Contrast")}
 
-![python](/screenshot/nwc-python.png)
+![python](../screenshot/nwc-python.png)
 
 ### JSON [(Night Coder Gray Contrast Italic)]${this.previewURL("Night Coder Gray Contrast Italic")}
 
-![json](/screenshot/ngci-json.png)
+![json](../screenshot/ngci-json.png)
 
 ## Preferences shown in the screenshots
 
@@ -135,7 +135,7 @@ ${codeBlock}
 
 ## License
 
-[MIT License](/LICENSE)
+[MIT License](LICENSE)
 `;
     }
 }
@@ -146,11 +146,33 @@ export class Ice extends Extension {
         this.name = "ice";
         this.displayName = "Ice";
         this.description = "Cold as Ice";
-        this.version = "0.6.0";
+        this.version = "0.7.0";
         this.keywords = ["Ice", "Cold", "Dark", "Borderless", "Italic", "Contrast"];
         this.homepage = "https://github.com/a5hk/ice";
         this.repository = { type: "git", url: "https://github.com/a5hk/ice" };
-        this.galleryBanner.color = "";
+        this.galleryBanner.color = "#012841";
         this.createThemes();
+    }
+    generateReadme() {
+        return `# [Ice](https://marketplace.visualstudio.com/items?itemName=a5hk.ice)
+
+A freezing cold dark theme.
+
+Also available for [vim](../vim/colors/), [bat](../bat/), and [Windows Terminal](../windows-terminal/).
+
+## Screenshots
+
+### JavaScript [(Ice)]${this.previewURL("Ice")}
+
+![javascript](../screenshot/javascript.png)
+
+## Color palettes
+
+- [Color Palettes](ColorPalette.md)
+
+## License
+
+[MIT License](LICENSE)
+`;
     }
 }

@@ -28,13 +28,13 @@ function mainVariant(): Palette {
   p.headingColor = /* ........... */ new Color("#86f9d2", "Heading");
   p.inlineTagColor = /* ......... */ new Color("#86f9d2", "HTML inline tag");
   p.italicColor = /* ............ */ new Color("#b3fbff", "Italic");
-  p.linkTagColor = /* ........... */ new Color("#7ece98", "HTML link tag");
-  p.metaTagColor = /* ........... */ new Color("#77d8f8", "HTML meta tag");
-  p.styleTagColor = /* .......... */ new Color("77d8f8", "HTML style tag");
+  p.linkTagColor = /* ........... */ new Color("#d1aaf8", "HTML link tag");
+  p.metaTagColor = /* ........... */ new Color("#d1aaf8", "HTML meta tag");
+  p.styleTagColor = /* .......... */ new Color("#d1aaf8", "HTML style tag");
+  p.scriptTagColor = /* ......... */ new Color("#d1aaf8", "Script tag");
   p.objectTagColor = /* ......... */ new Color("#77d8f8", "HTML object tag");
   p.tagColor = /* ............... */ new Color("#2dd2ae", "Tag");
   p.unrecognizedTagColor = /* ... */ new Color("#b3fbff", "HTML unrecognized tag");
-  p.scriptTagColor = /* ......... */ new Color("#d1aaf8", "Script tag");
 
   // json
   p.jsonLevel01Color = new Color("#2dd2ae", "Level 1 JSON key");
@@ -42,11 +42,11 @@ function mainVariant(): Palette {
   p.jsonLevel03Color = new Color("#4dc3fe", "Level 3 JSON key");
   p.jsonLevel04Color = new Color("#86f9d2", "Level 4 JSON key");
   p.jsonLevel05Color = new Color("#77d8f8", "Level 5 JSON key");
-  p.jsonLevel06Color = new Color("#a8a8ff", "Level 6 JSON key");
-  p.jsonLevel07Color = new Color("#b3fbff", "Level 7 JSON key");
-  p.jsonLevel08Color = new Color("#2dd2ae", "Level 8 JSON key");
-  p.jsonLevel09Color = new Color("#d1aaf8", "Level 9 JSON key");
-  p.jsonLevel10Color = new Color("#86f9d2", "Level 10 JSON key");
+  p.jsonLevel06Color = new Color("#2dd2ae", "Level 6 JSON key");
+  p.jsonLevel07Color = new Color("#d1aaf8", "Level 7 JSON key");
+  p.jsonLevel08Color = new Color("#4dc3fe", "Level 8 JSON key");
+  p.jsonLevel09Color = new Color("#86f9d2", "Level 9 JSON key");
+  p.jsonLevel10Color = new Color("#77d8f8", "Level 10 JSON key");
   p.jsonLevel11Color = new Color("#2dd2ae", "Level > 10 JSON key");
 
   // terminal colors
