@@ -77,7 +77,7 @@ export class NightCoder extends Extension {
         this.name = "night-coder";
         this.displayName = "Night Coder";
         this.description = "A dark theme for Night Coders";
-        this.version = "4.2.0";
+        this.version = "4.2.1";
         this.keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
         this.homepage = "https://github.com/a5hk/night-coder";
         this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
@@ -103,31 +103,27 @@ A dark theme for Night Coders. There are three main variants:
 
 Each of these main variants, has contrast and italic versions.
 
-![html](../screenshot/demo.gif)
+![html](/screenshot/demo.gif)
 
 ## Other versions
 
-- [vim](../vim/colors/)
-- [bat](../bat/)
-- [Windows Terminal](../windows-terminal/)
-
-## Color palettes
-
-- [Color Palettes](ColorPalette.md)
+- [vim](/vim/colors/)
+- [bat](/bat/)
+- [Windows Terminal](/windows-terminal/)
 
 ## Screenshots
 
 ### JavaScript [(Night Coder)]${this.previewURL("Night Coder")}
 
-![javascript](../screenshot/n-javascript.png)
+![javascript](/screenshot/n-javascript.png)
 
 ### Python [(Night Coder Warm Contrast)]${this.previewURL("Night Coder Warm Contrast")}
 
-![python](../screenshot/nwc-python.png)
+![python](/screenshot/nwc-python.png)
 
 ### JSON [(Night Coder Gray Contrast Italic)]${this.previewURL("Night Coder Gray Contrast Italic")}
 
-![json](../screenshot/ngci-json.png)
+![json](/screenshot/ngci-json.png)
 
 ## Preferences shown in the screenshots
 
@@ -135,7 +131,7 @@ ${codeBlock}
 
 ## License
 
-[MIT License](LICENSE)
+[MIT License](/LICENSE)
 `;
     }
 }
@@ -146,7 +142,7 @@ export class Ice extends Extension {
         this.name = "ice";
         this.displayName = "Ice";
         this.description = "Cold as Ice";
-        this.version = "0.7.0";
+        this.version = "0.7.2";
         this.keywords = ["Ice", "Cold", "Dark", "Borderless", "Italic", "Contrast"];
         this.homepage = "https://github.com/a5hk/ice";
         this.repository = { type: "git", url: "https://github.com/a5hk/ice" };
@@ -158,21 +154,17 @@ export class Ice extends Extension {
 
 A freezing cold dark theme.
 
-Also available for [vim](../vim/colors/), [bat](../bat/), and [Windows Terminal](../windows-terminal/).
+Also available for [vim](/vim/colors/), [bat](/bat/), and [Windows Terminal](/windows-terminal/).
 
 ## Screenshots
 
 ### JavaScript [(Ice)]${this.previewURL("Ice")}
 
-![javascript](../screenshot/javascript.png)
-
-## Color palettes
-
-- [Color Palettes](ColorPalette.md)
+![javascript](/screenshot/javascript.png)
 
 ## License
 
-[MIT License](LICENSE)
+[MIT License](/LICENSE)
 `;
     }
 }

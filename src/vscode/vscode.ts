@@ -26,7 +26,7 @@ export function vscodeThemesWriter(): void {
     }
 
     fileWriter(ext.generateManifest(), cat, "package.json");
-    fileWriter(ext.generateColorPaletteMap(), cat, "ColorPalette.md");
+    // fileWriter(ext.generateColorPaletteMap(), cat, "ColorPalette.md");
     fileWriter(ext.generateReadme(), cat, "README.md");
   }
 }
