@@ -4,31 +4,31 @@ import { VSTheme, VSThemeManifest } from "./theme.js";
 export class Extension {
   themes: VSTheme[] = [];
 
-  name = "";
-  displayName = "";
-  description = "";
-  version = "";
-  publisher = "a5hk";
   author = "a5hk";
-  license = "MIT";
-  icon = "icon.png";
-  keywords: string[] = ["Dark"];
-  galleryBanner: {
-    color: string;
-    theme: "light" | "dark";
-  } = { color: "#030917", theme: "dark" };
-  engines: {
-    vscode: string;
-  } = { vscode: "^1.60.0" };
-  homepage = "";
-  repository: {
-    type: string;
-    url: string;
-  } = { type: "git", url: "" };
   categories = ["Themes"];
   contributes: {
     themes: VSThemeManifest[];
   } = { themes: [] };
+  description = "";
+  displayName = "";
+  engines: {
+    vscode: string;
+  } = { vscode: "^1.60.0" };
+  galleryBanner: {
+    color: string;
+    theme: "light" | "dark";
+  } = { color: "#030917", theme: "dark" };
+  homepage = "";
+  icon = "icon.png";
+  keywords: string[] = ["Dark"];
+  license = "MIT";
+  name = "";
+  publisher = "a5hk";
+  repository: {
+    type: string;
+    url: string;
+  } = { type: "git", url: "" };
+  version = "";
 
   constructor() {
     Object.defineProperty(this, "themes", { enumerable: false });
@@ -94,7 +94,6 @@ ${this.variants()
   .map((p) => p.toMarkdownTable())
   .join("\n\n")}
 `;
-    // ${this.palettes.map((p) => p.toMarkdownTable()).join("\n\n")}
   }
 }
 

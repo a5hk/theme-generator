@@ -3,21 +3,21 @@ import { VSTheme } from "./theme.js";
 export class Extension {
     constructor() {
         this.themes = [];
-        this.name = "";
-        this.displayName = "";
-        this.description = "";
-        this.version = "";
-        this.publisher = "a5hk";
         this.author = "a5hk";
-        this.license = "MIT";
-        this.icon = "icon.png";
-        this.keywords = ["Dark"];
-        this.galleryBanner = { color: "#030917", theme: "dark" };
-        this.engines = { vscode: "^1.60.0" };
-        this.homepage = "";
-        this.repository = { type: "git", url: "" };
         this.categories = ["Themes"];
         this.contributes = { themes: [] };
+        this.description = "";
+        this.displayName = "";
+        this.engines = { vscode: "^1.60.0" };
+        this.galleryBanner = { color: "#030917", theme: "dark" };
+        this.homepage = "";
+        this.icon = "icon.png";
+        this.keywords = ["Dark"];
+        this.license = "MIT";
+        this.name = "";
+        this.publisher = "a5hk";
+        this.repository = { type: "git", url: "" };
+        this.version = "";
         Object.defineProperty(this, "themes", { enumerable: false });
     }
     get palettes() {
