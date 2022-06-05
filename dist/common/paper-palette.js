@@ -15,6 +15,7 @@ function accentBackgroundMix(alpha) {
 function mainVariant() {
     const p = new (colorPaletteFactory("#fcf8e8"))("Paper", "Main");
     p.contrastBackground = new Color("#fbf5df");
+    p.annotationColor = new Color("#675332", "Annotation");
     p.commentColor = new Color(mix("44"), "Comment");
     p.constantColor = new Color("#c91d1d", "Constant");
     p.comparisonLogicalOperatorColor = new Color("#0000ff", "Comparison/Logical operator");
@@ -27,6 +28,7 @@ function mainVariant() {
     p.importColor = new Color("#c91d1d", "Import/Require/Use");
     p.keywordColor = new Color("#c20aac", "Keyword");
     p.literalConstantColor = new Color("#a100d6", "Literal constant");
+    p.miscellaneousColor = new Color("#675332", "Miscellaneous");
     p.namespaceClassStructColor = new Color("#2059cb", "Namespace/Class/Struct");
     p.operatorColor = new Color("#981aff", "Operator");
     p.parameterArgumentColor = new Color(mix("e5"), "Parameter, Argument");
