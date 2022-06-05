@@ -67,6 +67,9 @@ function mainVariant(): Palette {
   p.ansiYellow = /* .......... */ new Color("#d9d326");
 
   // workbench colors
+  p.activityBarBadgeBackground = /* ..... */ new Color("#186d75");
+  p.activityBarBadgeForeground = /* ..... */ new Color("#dee3e6");
+  p.minimapSelectionHighlight = /* ...... */ new Color("#186d7566");
   p.statusBarBackground = /* ............ */ new Color("#186d75");
   p.statusBarForeground = /* ............ */ new Color("#dee3e6");
   p.statusBarRemoteBackground = /* ...... */ new Color("#752018");

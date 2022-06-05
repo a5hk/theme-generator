@@ -1,7 +1,7 @@
 import path from "path";
 import { getPaletteCategories } from "../common/colors.js";
 import { themeWriter } from "../common/theme-writer.js";
-import { Ice, NightCoder } from "./extension.js";
+import { Ice, NightCoder, Paper } from "./extension.js";
 function fileWriter(content, category, filepath) {
     const baseOutputDir = "vscode";
     const p = path.normalize(path.join(category, baseOutputDir, filepath));
@@ -14,8 +14,11 @@ export function vscodeThemesWriter() {
         if (cat === "night-coder") {
             ext = new NightCoder();
         }
-        else {
+        else if (cat === "ice") {
             ext = new Ice();
+        }
+        else {
+            ext = new Paper();
         }
         for (const t of ext.themes) {
             fileWriter(t.generateTheme(), cat, t.path);
