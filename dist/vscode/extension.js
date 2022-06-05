@@ -77,7 +77,7 @@ export class NightCoder extends Extension {
         this.name = "night-coder";
         this.displayName = "Night Coder";
         this.description = "A dark theme for Night Coders";
-        this.version = "4.2.1";
+        this.version = "4.2.2";
         this.keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
         this.homepage = "https://github.com/a5hk/night-coder";
         this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
@@ -142,7 +142,7 @@ export class Ice extends Extension {
         this.name = "ice";
         this.displayName = "Ice";
         this.description = "Cold as Ice";
-        this.version = "0.7.2";
+        this.version = "0.7.3";
         this.keywords = ["Ice", "Cold", "Dark", "Borderless", "Italic", "Contrast"];
         this.homepage = "https://github.com/a5hk/ice";
         this.repository = { type: "git", url: "https://github.com/a5hk/ice" };
@@ -161,6 +161,48 @@ Also available for [vim](/vim/colors/), [bat](/bat/), and [Windows Terminal](/wi
 ### JavaScript [(Ice)]${this.previewURL("Ice")}
 
 ![javascript](/screenshot/javascript.png)
+
+## License
+
+[MIT License](/LICENSE)
+`;
+    }
+}
+export class Paper extends Extension {
+    constructor() {
+        super();
+        this.preview = true;
+        this.name = "paper";
+        this.displayName = "Paper";
+        this.description = "Light theme with good contrast";
+        this.version = "0.5.0";
+        this.keywords = ["Paper", "Light", "Borderless", "Italic", "Contrast"];
+        this.homepage = "https://github.com/a5hk/paper";
+        this.repository = { type: "git", url: "https://github.com/a5hk/paper" };
+        this.galleryBanner.color = "#eff1f3";
+        this.galleryBanner.theme = "light";
+        this.createThemes();
+    }
+    generateReadme() {
+        return `# [Ice](https://marketplace.visualstudio.com/items?itemName=a5hk.paper)
+
+The goal was to create a light theme with good contrast ratio and a yellowish paper like background color.
+
+Also available for [vim](/vim/colors/), [bat](/bat/), and [Windows Terminal](/windows-terminal/).
+
+## Screenshots
+
+### HTML [(paper)]${this.previewURL("paper")}
+
+![HTML](/screenshot/html.png)
+
+### JavaScript [(paper)]${this.previewURL("paper")}
+
+![javascript](/screenshot/javascript.png)
+
+### Python [(paper)]${this.previewURL("paper")}
+
+![Python](/screenshot/python.png)
 
 ## License
 
