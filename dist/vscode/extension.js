@@ -175,7 +175,7 @@ export class Paper extends Extension {
         this.name = "paper";
         this.displayName = "Paper";
         this.description = "Light theme with good contrast";
-        this.version = "0.6.0";
+        this.version = "0.7.0";
         this.keywords = ["Paper", "Light", "Borderless", "Italic", "Contrast"];
         this.homepage = "https://github.com/a5hk/paper";
         this.repository = { type: "git", url: "https://github.com/a5hk/paper" };

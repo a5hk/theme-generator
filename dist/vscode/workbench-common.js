@@ -70,7 +70,12 @@ export function commonWorkbenchColors(palette) {
         "editorWidget.background": palette.background22.code,
         "editorWidget.border": palette.background.code,
         "editorWidget.resizeBorder": palette.statusBarBackground.code,
+        focusBorder: palette.background.code,
         foreground: palette.foregroundColor.code,
+        "gitDecoration.addedResourceForeground": palette.gitDecorationAddedResourceForeground.code,
+        "gitDecoration.deletedResourceForeground": palette.gitDecorationDeletedResourceForeground.code,
+        "gitDecoration.modifiedResourceForeground": palette.gitDecorationModifiedResourceForeground.code,
+        "gitDecoration.untrackedResourceForeground": palette.gitDecorationUntrackedResourceForeground.code,
         "input.background": palette.background11.code,
         "list.activeSelectionBackground": palette.background33.code,
         "list.activeSelectionForeground": palette.backgroundcc.code,
@@ -93,6 +98,7 @@ export function commonWorkbenchColors(palette) {
         "notebook.inactiveFocusedCellBorder": palette.background44.code,
         "notebook.selectedCellBackground": palette.background11.code,
         "panel.border": palette.background.code,
+        "panelTitle.activeForeground": palette.backgroundaa.code,
         "peekView.border": palette.statusBarBackground.code,
         "peekViewEditor.background": palette.background11.code,
         "peekViewEditor.matchHighlightBackground": palette.background33.code,
@@ -181,7 +187,6 @@ export function commonWorkbenchColors(palette) {
         "titleBar.inactiveBackground": palette.background.code,
         "titleBar.inactiveForeground": palette.background99.code,
         "widget.shadow": `${palette.background11.code}00`,
-        focusBorder: palette.background.code,
     };
     return colors;
 }

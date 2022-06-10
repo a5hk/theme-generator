@@ -95,35 +95,39 @@ function mainVariant(): Palette {
   p.backgrounde5 = new Color(backgroundMix("e5"));
   p.backgroundee = new Color(backgroundMix("ee"));
 
-  p.activeIndentGuideBackground = /* .... */ new Color("#6547b8");
-  p.activityBarBadgeBackground = /* ..... */ new Color(accentBackgroundMix("22"));
-  p.activityBarBadgeForeground = /* ..... */ new Color(accentBackgroundMix("c5"));
-  p.buttonBackground = /* ............... */ new Color("#f04257");
-  p.buttonForeground = /* ............... */ new Color(
+  p.activeIndentGuideBackground = /* ................ */ new Color("#6547b8");
+  p.activityBarBadgeBackground = /* ................. */ new Color(accentBackgroundMix("22"));
+  p.activityBarBadgeForeground = /* ................. */ new Color(accentBackgroundMix("c5"));
+  p.buttonBackground = /* ........................... */ new Color("#f04257");
+  p.buttonForeground = /* ........................... */ new Color(
     chroma.mix("#f04257", "#ffffff", hexAlphaToDec("d5"), "rgb").toString()
   );
-  p.disabledForeground = /* ............. */ new Color(mix("77"));
-  p.editorErrorForeground = /* .......... */ new Color("#ff7575");
-  p.editorInfoForeground = /* ........... */ new Color("#02cad4");
-  p.editorWarningBackground = /* ........ */ new Color("#d9d32633");
-  p.editorWarningForeground = /* ........ */ new Color("#d9d326");
-  p.listFocusBackground = /* ............ */ new Color("#fffffff0");
-  p.menuForeground = /* ................. */ new Color(mix("c5"));
-  p.minimapSelectionHighlight = /* ...... */ new Color(`${accentBackgroundMix("22")}66`);
-  p.progressBarBackground = /* .......... */ new Color("#6547b8");
-  p.statusBarBackground = /* ............ */ new Color(accentBackgroundMix("0"));
-  p.statusBarDebuggingBackground = /* ... */ new Color("#9b2c2c");
-  p.statusBarDebuggingBorder = /* ....... */ new Color("#770000");
-  p.statusBarDebuggingForeground = /* ... */ new Color("#fdf7f7");
-  p.statusBarForeground = /* ............ */ new Color(accentBackgroundMix("ee"));
-  p.statusBarNoFolderBackground = /* .... */ new Color("#6547b8");
-  p.statusBarNoFolderForeground = /* .... */ new Color("#ede9f6");
-  p.statusBarRemoteBackground = /* ...... */ new Color("#f04257");
-  p.statusBarRemoteForeground = /* ...... */ new Color(
+  p.disabledForeground = /* ......................... */ new Color(mix("77"));
+  p.editorErrorForeground = /* ...................... */ new Color("#ff7575");
+  p.editorInfoForeground = /* ....................... */ new Color("#02cad4");
+  p.editorWarningBackground = /* .................... */ new Color("#d9d32633");
+  p.editorWarningForeground = /* .................... */ new Color("#d9d326");
+  p.gitDecorationAddedResourceForeground = /* ....... */ new Color("#007aa3");
+  p.gitDecorationDeletedResourceForeground = /* ..... */ new Color("#c91d1d");
+  p.gitDecorationModifiedResourceForeground = /* .... */ new Color("#956a04");
+  p.gitDecorationUntrackedResourceForeground = /* ... */ new Color("#3b7203");
+  p.listFocusBackground = /* ........................ */ new Color("#fffffff0");
+  p.menuForeground = /* ............................. */ new Color(mix("c5"));
+  p.minimapSelectionHighlight = /* .................. */ new Color(`${accentBackgroundMix("22")}66`);
+  p.progressBarBackground = /* ...................... */ new Color("#6547b8");
+  p.statusBarBackground = /* ........................ */ new Color(accentBackgroundMix("0"));
+  p.statusBarDebuggingBackground = /* ............... */ new Color("#9b2c2c");
+  p.statusBarDebuggingBorder = /* ................... */ new Color("#770000");
+  p.statusBarDebuggingForeground = /* ............... */ new Color("#fdf7f7");
+  p.statusBarForeground = /* ........................ */ new Color(accentBackgroundMix("ee"));
+  p.statusBarNoFolderBackground = /* ................ */ new Color("#6547b8");
+  p.statusBarNoFolderForeground = /* ................ */ new Color("#ede9f6");
+  p.statusBarRemoteBackground = /* .................. */ new Color("#f04257");
+  p.statusBarRemoteForeground = /* .................. */ new Color(
     chroma.mix("#f04257", "#ffffff", hexAlphaToDec("d5"), "rgb").toString()
   );
-  p.textLinkForeground = /* ............. */ new Color("#6547b8");
-  p.buttonHoverBackground = /* .......... */ new Color(
+  p.textLinkForeground = /* ......................... */ new Color("#6547b8");
+  p.buttonHoverBackground = /* ...................... */ new Color(
     chroma.mix("#f04257", "#000000", hexAlphaToDec("11"), "rgb").toString()
   );
 

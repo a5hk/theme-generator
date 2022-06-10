@@ -89,6 +89,10 @@ function mainVariant() {
     p.editorInfoForeground = new Color("#02cad4");
     p.editorWarningBackground = new Color("#d9d32633");
     p.editorWarningForeground = new Color("#d9d326");
+    p.gitDecorationAddedResourceForeground = new Color("#007aa3");
+    p.gitDecorationDeletedResourceForeground = new Color("#c91d1d");
+    p.gitDecorationModifiedResourceForeground = new Color("#956a04");
+    p.gitDecorationUntrackedResourceForeground = new Color("#3b7203");
     p.listFocusBackground = new Color("#fffffff0");
     p.menuForeground = new Color(mix("c5"));
     p.minimapSelectionHighlight = new Color(`${accentBackgroundMix("22")}66`);
