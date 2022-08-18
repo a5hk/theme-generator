@@ -11,6 +11,8 @@ export function commonWorkbenchColors(palette) {
         "button.hoverBackground": palette.buttonHoverBackground.code,
         "button.secondaryBackground": palette.background33.code,
         "button.secondaryForeground": palette.backgroundbb.code,
+        "commandCenter.background": palette.background11.code,
+        "commandCenter.border": palette.background.code,
         "debugToolBar.background": palette.background44.code,
         "diffEditor.insertedTextBackground": `${palette.statusBarBackground.code}33`,
         disabledForeground: palette.disabledForeground.code,
