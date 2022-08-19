@@ -144,6 +144,8 @@ export function colorPaletteFactory(bg = "#030917") {
         gitDecorationUntrackedResourceForeground: colorDescriptor(new Color("#73c991")),
         inlineValuesBackground: colorDescriptor(new Color("#c3ab8555")),
         inlineValuesForeground: colorDescriptor(new Color(mix("cc", bg))),
+        inputOptionActiveBackground: colorDescriptor(new Color(mix("44", bg))),
+        inputOptionHoverBackground: colorDescriptor(new Color(mix("33", bg))),
         listFocusBackground: colorDescriptor(new Color("#000000f0")),
         menuForeground: colorDescriptor(new Color(mix("aa", bg))),
         minimapSelectionHighlight: colorDescriptor(new Color("#00660066")),

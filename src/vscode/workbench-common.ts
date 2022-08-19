@@ -85,6 +85,8 @@ export function commonWorkbenchColors(palette: Palette): workbenchColor {
     "gitDecoration.modifiedResourceForeground": /* .... */ palette.gitDecorationModifiedResourceForeground.code,
     "gitDecoration.untrackedResourceForeground": /* ... */ palette.gitDecorationUntrackedResourceForeground.code,
     "input.background": /* ............................ */ palette.background11.code,
+    "inputOption.activeBackground": /* ................ */ palette.background44.code,
+    "inputOption.hoverBackground": /* ................. */ palette.background33.code,
     "list.activeSelectionBackground": /* .............. */ palette.background33.code,
     "list.activeSelectionForeground": /* .............. */ palette.backgroundcc.code,
     "list.focusBackground": /* ........................ */ palette.listFocusBackground.code,
