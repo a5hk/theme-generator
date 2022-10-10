@@ -116,6 +116,7 @@ export function commonWorkbenchColors(palette: Palette): workbenchColor {
     "peekViewResult.selectionBackground": /* .......... */ palette.background33.code,
     "peekViewTitle.background": /* .................... */ palette.background11.code,
     "peekViewTitleLabel.foreground": /* ............... */ palette.backgroundaa.code,
+    "pickerGroup.foreground": /* ...................... */ palette.foregroundColor.code, // code action header section
     "progressBar.background": /* ...................... */ palette.progressBarBackground.code,
     "quickInputList.focusBackground": /* .............. */ palette.background55.code,
     "sash.hoverBorder": /* ............................ */ palette.statusBarBackground.code,
