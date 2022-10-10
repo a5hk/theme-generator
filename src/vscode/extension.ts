@@ -104,7 +104,7 @@ export class NightCoder extends Extension {
     this.name = "night-coder";
     this.displayName = "Night Coder";
     this.description = "A dark theme for Night Coders";
-    this.version = "4.3.2";
+    this.version = "4.4.0";
     this.keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
     this.homepage = "https://github.com/a5hk/night-coder";
     this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
@@ -169,15 +169,13 @@ ${codeBlock}
 }
 
 export class Ice extends Extension {
-  preview = true;
-
   constructor() {
     super();
 
     this.name = "ice";
     this.displayName = "Ice";
     this.description = "Cold as Ice";
-    this.version = "1.0.1";
+    this.version = "1.1.0";
     this.keywords = ["Ice", "Cold", "Dark", "Borderless", "Italic", "Contrast"];
     this.homepage = "https://github.com/a5hk/ice";
     this.repository = { type: "git", url: "https://github.com/a5hk/ice" };
@@ -207,15 +205,13 @@ Also available for [vim](/vim/colors/), [bat](/bat/), and [Windows Terminal](/wi
 }
 
 export class Paper extends Extension {
-  preview = true;
-
   constructor() {
     super();
 
     this.name = "paper";
     this.displayName = "Paper";
     this.description = "Light theme with good contrast";
-    this.version = "1.0.1";
+    this.version = "1.1.0";
     this.keywords = ["Paper", "Light", "Borderless", "Italic", "Contrast"];
     this.homepage = "https://github.com/a5hk/paper";
     this.repository = { type: "git", url: "https://github.com/a5hk/paper" };
