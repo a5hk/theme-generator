@@ -77,7 +77,7 @@ export class NightCoder extends Extension {
         this.name = "night-coder";
         this.displayName = "Night Coder";
         this.description = "A dark theme for Night Coders";
-        this.version = "4.4.0";
+        this.version = "4.4.1";
         this.keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
         this.homepage = "https://github.com/a5hk/night-coder";
         this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
@@ -117,9 +117,9 @@ Each of these main variants, has contrast and italic versions.
 
 ![javascript](/screenshot/n-javascript.png)
 
-### Python [(Night Coder Warm Contrast)]${this.previewURL("Night Coder Warm Contrast")}
+### Python [(Night Coder Warm)]${this.previewURL("Night Coder Warm")}
 
-![python](/screenshot/nwc-python.png)
+![python](/screenshot/nw-python.png)
 
 ### JSON [(Night Coder Gray Contrast Italic)]${this.previewURL("Night Coder Gray Contrast Italic")}
 

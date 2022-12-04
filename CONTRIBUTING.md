@@ -1,4 +1,4 @@
-# Contributing to Night Coder
+# Contributing to Theme Generator
 
 1. Modify the source code [/src](/src)
    - You can find color palettes in [/src/common](/src/common)
