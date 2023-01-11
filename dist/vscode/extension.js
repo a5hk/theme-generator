@@ -77,7 +77,7 @@ export class NightCoder extends Extension {
         this.name = "night-coder";
         this.displayName = "Night Coder";
         this.description = "A dark theme for Night Coders";
-        this.version = "4.4.1";
+        this.version = "4.4.2";
         this.keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
         this.homepage = "https://github.com/a5hk/night-coder";
         this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
@@ -141,7 +141,7 @@ export class Ice extends Extension {
         this.name = "ice";
         this.displayName = "Ice";
         this.description = "Cold as Ice";
-        this.version = "1.1.0";
+        this.version = "1.1.1";
         this.keywords = ["Ice", "Cold", "Dark", "Borderless", "Italic", "Contrast"];
         this.homepage = "https://github.com/a5hk/ice";
         this.repository = { type: "git", url: "https://github.com/a5hk/ice" };
@@ -173,7 +173,7 @@ export class Paper extends Extension {
         this.name = "paper";
         this.displayName = "Paper";
         this.description = "Light theme with good contrast";
-        this.version = "1.1.0";
+        this.version = "1.1.1";
         this.keywords = ["Paper", "Light", "Borderless", "Italic", "Contrast"];
         this.homepage = "https://github.com/a5hk/paper";
         this.repository = { type: "git", url: "https://github.com/a5hk/paper" };
