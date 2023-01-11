@@ -118,6 +118,7 @@ export function commonWorkbenchColors(palette) {
         "scrollbarSlider.activeBackground": palette.minimapSelectionHighlight.code,
         "scrollbarSlider.background": `${palette.background44.code}77`,
         "scrollbarSlider.hoverBackground": `${palette.background55.code}88`,
+        "settings.dropdownForeground": palette.foregroundColor.code,
         "settings.headerForeground": palette.foregroundColor.code,
         "sideBar.background": palette.background.code,
         "sideBarSectionHeader.background": palette.background11.code,
