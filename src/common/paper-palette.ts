@@ -103,7 +103,7 @@ function mainVariant(): Palette {
     chroma.mix("#f04257", "#ffffff", hexAlphaToDec("d5"), "rgb").toString()
   );
   p.disabledForeground = /* ......................... */ new Color(mix("77"));
-  p.editorErrorForeground = /* ...................... */ new Color("#ff7575");
+  // p.editorErrorForeground = /* ...................... */ new Color("#ff7575");
   p.editorInfoForeground = /* ....................... */ new Color("#02cad4");
   p.editorWarningBackground = /* .................... */ new Color("#d9d32633");
   p.editorWarningForeground = /* .................... */ new Color("#d9d326");
