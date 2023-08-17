@@ -1,4 +1,4 @@
-import { Palette, getPalettes, getPaletteCategories } from "../common/colors.js";
+import { Palette } from "../common/colors.js";
 import { themeWriter } from "../common/theme-writer.js";
 
 interface WindowsTerminalSetting {
@@ -37,10 +37,7 @@ export function windowsTerminalColors(palette: Palette): string {
   return JSON.stringify(settings);
 }
 
-export function windowsTerminalColorScheme(): void {
-  const categories = getPaletteCategories();
-  const palettes = getPalettes();
-
+export function windowsTerminalColorScheme(palettes: Palette[], categories: string[]): void {
   for (const cat of categories) {
     for (const p of palettes) {
       if (p.name.toLowerCase().replace(/ +/g, "-") === cat) {

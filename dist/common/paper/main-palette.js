@@ -1,5 +1,5 @@
 import chroma from "chroma-js";
-import { Palette, Color, registerPalette } from "./colors.js";
+import { Palette, Color } from "../colors.js";
 function hexAlphaToDec(alpha) {
     return parseInt(alpha, 16) / 255;
 }
@@ -12,7 +12,7 @@ function backgroundMix(alpha) {
 function accentBackgroundMix(alpha) {
     return chroma.mix("#0fbda8", "#000000", hexAlphaToDec(alpha), "rgb").toString();
 }
-class PaperPalette extends Palette {
+export class PaperPalette extends Palette {
     constructor() {
         super();
         this.contrastBackground = new Color("#fbf5df");
@@ -130,13 +130,9 @@ class PaperPalette extends Palette {
         this.ansiWhite = new Color("#c5c6c9");
         this.ansiYellow = new Color("#d9d326");
         this.name = "Paper";
+        this.lightOrDark = "light";
     }
     baseColor() {
         return "#fcf8e8";
     }
 }
-function mainVariant() {
-    const p = new PaperPalette();
-    return p;
-}
-registerPalette(mainVariant());

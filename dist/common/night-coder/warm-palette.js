@@ -1,6 +1,6 @@
-import { Color, registerPalette } from "./colors.js";
+import { Color } from "../colors.js";
 import { NightCoderPalette } from "./main-palette.js";
-class NightCoderWarmPalette extends NightCoderPalette {
+export class NightCoderWarmPalette extends NightCoderPalette {
     constructor() {
         super();
         this.contrastBackground = new Color("#0a0d0f");
@@ -42,8 +42,3 @@ class NightCoderWarmPalette extends NightCoderPalette {
         return "#0f1317";
     }
 }
-function warmVariant() {
-    const p = new NightCoderWarmPalette();
-    return p;
-}
-registerPalette(warmVariant());

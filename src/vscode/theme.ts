@@ -13,7 +13,7 @@ export interface VSThemeManifest {
 interface ThemeOptions {
   contrast: boolean;
   italic: boolean;
-  uiTheme: "vs" | "vs-dark" | "hc-back";
+  uiTheme: "vs" | "vs-dark" | "hc-black" | "hc-light";
 }
 
 export class VSTheme {

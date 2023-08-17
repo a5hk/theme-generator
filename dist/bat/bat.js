@@ -1,7 +1,6 @@
 import xmlFormatter from "xml-formatter";
 import { themeWriter } from "../common/theme-writer.js";
 import { TextmateTheme } from "../vscode/textmate-regular.js";
-import { getPalettes, getPaletteCategories } from "../common/colors.js";
 export function tmTheme(palette) {
     const textmateRule = new TextmateTheme(palette);
     const prefix = [
@@ -59,9 +58,7 @@ export function tmTheme(palette) {
         lineSeparator: "\n",
     });
 }
-export function batColorScheme() {
-    const categories = getPaletteCategories();
-    const palettes = getPalettes();
+export function batColorScheme(palettes, categories) {
     for (const cat of categories) {
         for (const p of palettes) {
             if (p.name.toLowerCase().replace(/ +/g, "-") === cat) {

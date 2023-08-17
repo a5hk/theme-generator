@@ -1,5 +1,5 @@
-import { Palette, Color, registerPalette } from "./colors.js";
-class IcePalette extends Palette {
+import { Palette, Color } from "../colors.js";
+export class IcePalette extends Palette {
     constructor() {
         super();
         this.contrastBackground = new Color("#012237");
@@ -70,8 +70,3 @@ class IcePalette extends Palette {
         return "#012841";
     }
 }
-function mainVariant() {
-    const p = new IcePalette();
-    return p;
-}
-registerPalette(mainVariant());

@@ -1,6 +1,8 @@
-import { colorPaletteFactory, registerPalette } from "./colors.js";
+import { Palette, registerPalette } from "./colors.js";
+export class NightCoderPalette extends Palette {
+}
 function mainVariant() {
-    const p = new (colorPaletteFactory())("Night Coder", "Main");
+    const p = new NightCoderPalette();
     return p;
 }
 registerPalette(mainVariant());

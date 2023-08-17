@@ -1,4 +1,3 @@
-import { getPalettes } from "../common/colors.js";
 import { VSTheme } from "./theme.js";
 export class Extension {
     constructor() {
@@ -23,12 +22,15 @@ export class Extension {
     get palettes() {
         return this.themes.map((t) => t.palette);
     }
-    createThemes() {
-        const palettes = getPalettes().filter((p) => p.name === this.displayName);
+    createThemes(palettes) {
         for (const p of palettes) {
             for (const style of [false, true]) {
                 for (const contrast of [false, true]) {
-                    const t = new VSTheme(p, { contrast: contrast, italic: style, uiTheme: "vs-dark" });
+                    const t = new VSTheme(p, {
+                        contrast: contrast,
+                        italic: style,
+                        uiTheme: p.lightOrDark == "dark" ? "vs-dark" : "vs",
+                    });
                     this.addTheme(t);
                 }
             }
@@ -72,7 +74,7 @@ ${this.variants()
     }
 }
 export class NightCoder extends Extension {
-    constructor() {
+    constructor(palettes) {
         super();
         this.name = "night-coder";
         this.displayName = "Night Coder";
@@ -81,7 +83,7 @@ export class NightCoder extends Extension {
         this.keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
         this.homepage = "https://github.com/a5hk/night-coder";
         this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
-        this.createThemes();
+        this.createThemes(palettes);
     }
     generateReadme() {
         const codeBlock = [
@@ -136,7 +138,7 @@ ${codeBlock}
     }
 }
 export class Ice extends Extension {
-    constructor() {
+    constructor(palettes) {
         super();
         this.name = "ice";
         this.displayName = "Ice";
@@ -146,7 +148,7 @@ export class Ice extends Extension {
         this.homepage = "https://github.com/a5hk/ice";
         this.repository = { type: "git", url: "https://github.com/a5hk/ice" };
         this.galleryBanner.color = "#012841";
-        this.createThemes();
+        this.createThemes(palettes);
     }
     generateReadme() {
         return `# [Ice](https://marketplace.visualstudio.com/items?itemName=a5hk.ice)
@@ -168,18 +170,18 @@ Also available for [vim](/vim/colors/), [bat](/bat/), and [Windows Terminal](/wi
     }
 }
 export class Paper extends Extension {
-    constructor() {
+    constructor(palettes) {
         super();
         this.name = "paper";
         this.displayName = "Paper";
         this.description = "Light theme with good contrast";
-        this.version = "1.1.2";
+        this.version = "1.1.3";
         this.keywords = ["Paper", "Light", "Borderless", "Italic", "Contrast"];
         this.homepage = "https://github.com/a5hk/paper";
         this.repository = { type: "git", url: "https://github.com/a5hk/paper" };
         this.galleryBanner.color = "#eff1f3";
         this.galleryBanner.theme = "light";
-        this.createThemes();
+        this.createThemes(palettes);
     }
     generateReadme() {
         return `# [paper](https://marketplace.visualstudio.com/items?itemName=a5hk.paper)
