@@ -39,12 +39,14 @@ export class Extension {
   }
 
   createThemes(palettes: Palette[]) {
-    const plt = palettes.filter((p) => p.name === this.displayName);
-
-    for (const p of plt) {
+    for (const p of palettes) {
       for (const style of [false, true]) {
         for (const contrast of [false, true]) {
-          const t = new VSTheme(p, { contrast: contrast, italic: style, uiTheme: "vs-dark" });
+          const t = new VSTheme(p, {
+            contrast: contrast,
+            italic: style,
+            uiTheme: p.lightOrDark == "dark" ? "vs-dark" : "vs",
+          });
           this.addTheme(t);
         }
       }

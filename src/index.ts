@@ -1,8 +1,3 @@
-// import "./common/night-coder/main-palette.js";
-// import "./common/night-coder/warm-palette.js";
-// import "./common/night-coder/gray-palette.js";
-// import "./common/ice/main-palette.js";
-// import "./common/paper/main-palette.js";
 import { Palette } from "./common/colors.js";
 import { NightCoderPalette } from "./common/night-coder/main-palette.js";
 import { NightCoderGrayPalette } from "./common/night-coder/gray-palette.js";

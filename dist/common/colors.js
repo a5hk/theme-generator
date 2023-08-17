@@ -162,8 +162,10 @@ export class Palette {
         this.ansiYellow = new Color("#d9d326");
         this.name = "Night Coder";
         this.variant = "Main";
+        this.lightOrDark = "dark";
         Object.defineProperty(this, "name", { enumerable: false });
         Object.defineProperty(this, "variant", { enumerable: false });
+        Object.defineProperty(this, "lightOrDark", { enumerable: false });
     }
     baseColor() {
         return "#030917";

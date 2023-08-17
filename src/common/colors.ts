@@ -178,10 +178,12 @@ export class Palette {
   // other properties
   name = "Night Coder";
   variant = "Main";
+  lightOrDark: "light" | "dark" = "dark";
 
   constructor() {
     Object.defineProperty(this, "name", { enumerable: false });
     Object.defineProperty(this, "variant", { enumerable: false });
+    Object.defineProperty(this, "lightOrDark", { enumerable: false });
   }
 
   baseColor(): string {

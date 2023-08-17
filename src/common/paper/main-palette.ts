@@ -156,6 +156,7 @@ export class PaperPalette extends Palette {
   constructor() {
     super();
     this.name = "Paper";
+    this.lightOrDark = "light";
   }
 
   baseColor(): string {
