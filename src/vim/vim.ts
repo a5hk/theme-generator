@@ -147,7 +147,7 @@ if has("termguicolors")
   set termguicolors
 endif
 
-set background=dark
+set background=${palette.lightOrDark}
 let colors_name="${palette.fullName()}"
 
 highlight clear CursorLine
