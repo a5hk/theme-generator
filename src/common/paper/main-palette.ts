@@ -1,6 +1,6 @@
 import chroma from "chroma-js";
 
-import { Palette, Color, registerPalette } from "../colors.js";
+import { Palette, Color } from "../colors.js";
 
 function hexAlphaToDec(alpha: string): number {
   return parseInt(alpha, 16) / 255;
@@ -18,7 +18,7 @@ function accentBackgroundMix(alpha: string): string {
   return chroma.mix("#0fbda8", "#000000", hexAlphaToDec(alpha), "rgb").toString();
 }
 
-class PaperPalette extends Palette {
+export class PaperPalette extends Palette {
   contrastBackground = new Color("#fbf5df");
 
   // token colors
@@ -162,10 +162,3 @@ class PaperPalette extends Palette {
     return "#fcf8e8";
   }
 }
-
-function mainVariant(): Palette {
-  const p = new PaperPalette();
-  return p;
-}
-
-registerPalette(mainVariant());

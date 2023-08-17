@@ -200,13 +200,3 @@ export class Palette {
         ].join("\n");
     }
 }
-const availablePalettes = [];
-export function registerPalette(p) {
-    availablePalettes.push(p);
-}
-export function getPalettes() {
-    return availablePalettes;
-}
-export function getPaletteCategories() {
-    return [...new Set(availablePalettes.map((p) => p.name.toLowerCase().replace(/ +/g, "-")))];
-}

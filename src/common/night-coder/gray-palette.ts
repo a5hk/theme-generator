@@ -1,7 +1,7 @@
-import { Palette, Color, registerPalette } from "../colors.js";
+import { Color } from "../colors.js";
 import { NightCoderPalette } from "./main-palette.js";
 
-class NightCoderGrayPalette extends NightCoderPalette {
+export class NightCoderGrayPalette extends NightCoderPalette {
   contrastBackground = new Color("#262626");
 
   // token colors
@@ -81,10 +81,3 @@ class NightCoderGrayPalette extends NightCoderPalette {
     return "#2c2c2c";
   }
 }
-
-function grayVariant(): Palette {
-  const p = new NightCoderGrayPalette();
-  return p;
-}
-
-registerPalette(grayVariant());
