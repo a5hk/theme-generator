@@ -29,240 +29,206 @@ function mix(alpha: string, background: string): string {
   return chroma.mix(background, "#ffffff", hexAlphaToDec(alpha), "rgb").toString();
 }
 
-function colorDescriptor(c: Color, enumerable = false) {
-  return () => {
-    let color = c;
-    return {
-      enumerable: enumerable,
-      get() {
-        return color;
-      },
-      set(c: Color) {
-        color = c;
-      },
-    };
-  };
-}
+export class Palette {
+  // token colors
+  annotationColor = /* .................. */ new Color("#c3ab85", "Annotation");
+  commentColor = /* ..................... */ new Color(mix("44", this.baseColor()), "Comment");
+  comparisonLogicalOperatorColor = /* ... */ new Color("#93ecb8", "Comparison/Logical operator");
+  constantColor = /* .................... */ new Color("#f1836f", "Constant");
+  defaultLibraryClassTypeColor = /* ..... */ new Color("#ff99b3", "Default library class/type");
+  defaultLibraryFunctionColor = /* ...... */ new Color("#7dbbe8", "Default library function");
+  documentationColor = /* ............... */ new Color(mix("aa", this.baseColor()), "Documentation");
+  foregroundColor = /* .................. */ new Color(mix("c0", this.baseColor()), "Foreground");
+  functionCallColor = /* ................ */ new Color("#ddc888", "Function call");
+  functionDeclarationColor = /* ......... */ new Color("#85c3ab", "Function declaration");
+  importColor = /* ...................... */ new Color("#8dbf82", "Import/Require/Use");
+  keywordColor = /* ..................... */ new Color("#c982c1", "Keyword");
+  literalConstantColor = /* ............. */ new Color("#bfa6f2", "Literal constant");
+  miscellaneousColor = /* ............... */ new Color("#c3ab85", "Miscellaneous");
+  namespaceClassStructColor = /* ........ */ new Color("#829dc9", "Namespace/Class/Struct");
+  operatorColor = /* .................... */ new Color("#f2f28c", "Operator");
+  parameterArgumentColor = /* ........... */ new Color(mix("e5", this.baseColor()), "Parameter, Argument");
+  propertyColor = /* .................... */ new Color("#e4aa81", "Property");
+  stringColor = /* ...................... */ new Color("#8dbf82", "String");
+  typeColor = /* ........................ */ new Color("#0bc2cb", "Type");
+  variableColor = /* .................... */ new Color(mix("c0", this.baseColor()), "Variable");
 
-function BasePalette<T extends Record<string, unknown>>(descriptors: {
-  [K in keyof T]: () => TypedPropertyDescriptor<T[K]>;
-}): new () => T {
-  return class {
-    constructor() {
-      let k: keyof T;
+  // html / markup
+  // eslint-disable-next-line sort-keys
+  attributeNameColor = /* ..... */ new Color("#ddc888", "Attribute name");
+  customTagColor = /* ......... */ new Color("#bfa6f2", "HTML custom tag");
+  headingColor = /* ........... */ new Color("#ddc888", "Heading");
+  inlineTagColor = /* ......... */ new Color("#7dbbe8", "HTML inline tag");
+  italicColor = /* ............ */ new Color("#93ecb8", "Italic");
+  linkTagColor = /* ........... */ new Color("#85c3ab", "HTML link tag");
+  metaTagColor = /* ........... */ new Color("#c982c1", "HTML meta tag");
+  objectTagColor = /* ......... */ new Color("#ff99b3", "HTML object tag");
+  scriptTagColor = /* ......... */ new Color("#d9d326", "Script tag");
+  styleTagColor = /* .......... */ new Color("#829dc9", "HTML style tag");
+  tagColor = /* ............... */ new Color("#e4aa81", "Tag");
+  tagPunctuationColor = /* .... */ new Color(mix("77", this.baseColor()), "Tag punctuation");
+  unrecognizedTagColor = /* ... */ new Color("#f1836f", "HTML unrecognized tag");
 
-      for (k in descriptors) {
-        Object.defineProperty(this, k, descriptors[k]());
-      }
-    }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } as any;
-}
+  // json
+  // eslint-disable-next-line sort-keys
+  jsonLevel01Color = new Color("#e4aa81", "Level 1 JSON key");
+  jsonLevel02Color = new Color("#c982c1", "Level 2 JSON key");
+  jsonLevel03Color = new Color("#0bc2cb", "Level 3 JSON key");
+  jsonLevel04Color = new Color("#ddc888", "Level 4 JSON key");
+  jsonLevel05Color = new Color("#ff99b3", "Level 5 JSON key");
+  jsonLevel06Color = new Color("#7dbbe8", "Level 6 JSON key");
+  jsonLevel07Color = new Color("#829dc9", "Level 7 JSON key");
+  jsonLevel08Color = new Color("#f1836f", "Level 8 JSON key");
+  jsonLevel09Color = new Color("#c3ab85", "Level 9 JSON key");
+  jsonLevel10Color = new Color("#d9d326", "Level 10 JSON key");
+  jsonLevel11Color = new Color("#e4aa81", "Level > 10 JSON key");
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export function colorPaletteFactory(bg = "#030917") {
-  return class ColorPalette extends BasePalette({
-    // token colors
-    annotationColor: /* .................. */ colorDescriptor(new Color("#c3ab85", "Annotation"), true),
-    commentColor: /* ..................... */ colorDescriptor(new Color(mix("44", bg), "Comment"), true),
-    comparisonLogicalOperatorColor: /* ... */ colorDescriptor(
-      new Color("#93ecb8", "Comparison/Logical operator"),
-      true
-    ),
-    constantColor: /* .................... */ colorDescriptor(new Color("#f1836f", "Constant"), true),
-    defaultLibraryClassTypeColor: /* ..... */ colorDescriptor(new Color("#ff99b3", "Default library class/type"), true),
-    defaultLibraryFunctionColor: /* ...... */ colorDescriptor(new Color("#7dbbe8", "Default library function"), true),
-    documentationColor: /* ............... */ colorDescriptor(new Color(mix("aa", bg), "Documentation"), true),
-    foregroundColor: /* .................. */ colorDescriptor(new Color(mix("c0", bg), "Foreground"), true),
-    functionCallColor: /* ................ */ colorDescriptor(new Color("#ddc888", "Function call"), true),
-    functionDeclarationColor: /* ......... */ colorDescriptor(new Color("#85c3ab", "Function declaration"), true),
-    importColor: /* ...................... */ colorDescriptor(new Color("#8dbf82", "Import/Require/Use"), true),
-    keywordColor: /* ..................... */ colorDescriptor(new Color("#c982c1", "Keyword"), true),
-    literalConstantColor: /* ............. */ colorDescriptor(new Color("#bfa6f2", "Literal constant"), true),
-    miscellaneousColor: /* ............... */ colorDescriptor(new Color("#c3ab85", "Miscellaneous"), true),
-    namespaceClassStructColor: /* ........ */ colorDescriptor(new Color("#829dc9", "Namespace/Class/Struct"), true),
-    operatorColor: /* .................... */ colorDescriptor(new Color("#f2f28c", "Operator"), true),
-    parameterArgumentColor: /* ........... */ colorDescriptor(new Color(mix("e5", bg), "Parameter, Argument"), true),
-    propertyColor: /* .................... */ colorDescriptor(new Color("#e4aa81", "Property"), true),
-    stringColor: /* ...................... */ colorDescriptor(new Color("#8dbf82", "String"), true),
-    typeColor: /* ........................ */ colorDescriptor(new Color("#0bc2cb", "Type"), true),
-    variableColor: /* .................... */ colorDescriptor(new Color(mix("c0", bg), "Variable"), true),
+  // workbench colors
+  // eslint-disable-next-line sort-keys
+  background = new Color(mix("0", this.baseColor()));
+  background11 = new Color(mix("11", this.baseColor()));
+  background1a = new Color(mix("1a", this.baseColor()));
+  background22 = new Color(mix("22", this.baseColor()));
+  background25 = new Color(mix("25", this.baseColor()));
+  background33 = new Color(mix("33", this.baseColor()));
+  background44 = new Color(mix("44", this.baseColor()));
+  background55 = new Color(mix("55", this.baseColor()));
+  background66 = new Color(mix("66", this.baseColor()));
+  background77 = new Color(mix("77", this.baseColor()));
+  background88 = new Color(mix("88", this.baseColor()));
+  background99 = new Color(mix("99", this.baseColor()));
+  backgroundaa = new Color(mix("aa", this.baseColor()));
+  backgroundbb = new Color(mix("bb", this.baseColor()));
+  backgroundc5 = new Color(mix("c5", this.baseColor()));
+  backgroundcc = new Color(mix("cc", this.baseColor()));
+  backgrounddd = new Color(mix("dd", this.baseColor()));
+  backgrounde5 = new Color(mix("e5", this.baseColor()));
+  backgroundee = new Color(mix("ee", this.baseColor()));
 
-    // html / markup
-    // eslint-disable-next-line sort-keys
-    attributeNameColor: /* ..... */ colorDescriptor(new Color("#ddc888", "Attribute name"), true),
-    customTagColor: /* ......... */ colorDescriptor(new Color("#bfa6f2", "HTML custom tag"), true),
-    headingColor: /* ........... */ colorDescriptor(new Color("#ddc888", "Heading"), true),
-    inlineTagColor: /* ......... */ colorDescriptor(new Color("#7dbbe8", "HTML inline tag"), true),
-    italicColor: /* ............ */ colorDescriptor(new Color("#93ecb8", "Italic"), true),
-    linkTagColor: /* ........... */ colorDescriptor(new Color("#85c3ab", "HTML link tag"), true),
-    metaTagColor: /* ........... */ colorDescriptor(new Color("#c982c1", "HTML meta tag"), true),
-    objectTagColor: /* ......... */ colorDescriptor(new Color("#ff99b3", "HTML object tag"), true),
-    scriptTagColor: /* ......... */ colorDescriptor(new Color("#d9d326", "Script tag"), true),
-    styleTagColor: /* .......... */ colorDescriptor(new Color("#829dc9", "HTML style tag"), true),
-    tagColor: /* ............... */ colorDescriptor(new Color("#e4aa81", "Tag"), true),
-    tagPunctuationColor: /* .... */ colorDescriptor(new Color(mix("77", bg), "Tag punctuation"), true),
-    unrecognizedTagColor: /* ... */ colorDescriptor(new Color("#f1836f", "HTML unrecognized tag"), true),
+  contrastBackground = new Color("#030612");
 
-    // json
-    // eslint-disable-next-line sort-keys
-    jsonLevel01Color: colorDescriptor(new Color("#e4aa81", "Level 1 JSON key"), true),
-    jsonLevel02Color: colorDescriptor(new Color("#c982c1", "Level 2 JSON key"), true),
-    jsonLevel03Color: colorDescriptor(new Color("#0bc2cb", "Level 3 JSON key"), true),
-    jsonLevel04Color: colorDescriptor(new Color("#ddc888", "Level 4 JSON key"), true),
-    jsonLevel05Color: colorDescriptor(new Color("#ff99b3", "Level 5 JSON key"), true),
-    jsonLevel06Color: colorDescriptor(new Color("#7dbbe8", "Level 6 JSON key"), true),
-    jsonLevel07Color: colorDescriptor(new Color("#829dc9", "Level 7 JSON key"), true),
-    jsonLevel08Color: colorDescriptor(new Color("#f1836f", "Level 8 JSON key"), true),
-    jsonLevel09Color: colorDescriptor(new Color("#c3ab85", "Level 9 JSON key"), true),
-    jsonLevel10Color: colorDescriptor(new Color("#d9d326", "Level 10 JSON key"), true),
-    jsonLevel11Color: colorDescriptor(new Color("#e4aa81", "Level > 10 JSON key"), true),
+  // eslint-disable-next-line sort-keys
+  activeIndentGuideBackground = /* ......................... */ new Color("#53ac53");
+  activityBarBadgeBackground = /* .......................... */ new Color("#006600");
+  activityBarBadgeForeground = /* .......................... */ new Color("#f5fff5");
+  buttonBackground = /* .................................... */ new Color(mix("44", this.baseColor()));
+  buttonForeground = /* .................................... */ new Color(mix("cc", this.baseColor()));
+  buttonHoverBackground = /* ............................... */ new Color(mix("33", this.baseColor()));
+  disabledForeground = /* .................................. */ new Color(mix("77", this.baseColor()));
+  editorInfoForeground = /* ................................ */ new Color("#02cad4");
+  editorLightBulbAutoFixForeground = /* .................... */ new Color("#f2f28c");
+  editorLightBulbForeground = /* ........................... */ new Color("#f1836f");
+  editorWarningBackground = /* ............................. */ new Color("#d9d32633");
+  editorWarningForeground = /* ............................. */ new Color("#d9d326");
+  errorForeground = /* ..................................... */ new Color("#ff7575");
+  gitDecorationAddedResourceForeground = /* ................ */ new Color("#81b88b");
+  gitDecorationDeletedResourceForeground = /* .............. */ new Color("#c74e39");
+  gitDecorationModifiedResourceForeground = /* ............. */ new Color("#e2c08d");
+  gitDecorationUntrackedResourceForeground = /* ............ */ new Color("#73c991");
+  inlineValuesBackground = /* .............................. */ new Color("#c3ab8555");
+  inlineValuesForeground = /* .............................. */ new Color(mix("cc", this.baseColor()));
+  inputOptionActiveBackground = /* ......................... */ new Color(mix("44", this.baseColor()));
+  inputOptionHoverBackground = /* .......................... */ new Color(mix("33", this.baseColor()));
+  listFocusBackground = /* ................................. */ new Color("#000000f0");
+  menuForeground = /* ...................................... */ new Color(mix("aa", this.baseColor()));
+  minimapSelectionHighlight = /* ........................... */ new Color("#00660066");
+  progressBarBackground = /* ............................... */ new Color("#d9d326");
+  sideBySideEditorBorder = /* .............................. */ new Color(mix("22", this.baseColor()));
+  statusBarBackground = /* ................................. */ new Color("#006600");
+  statusBarDebuggingBackground = /* ........................ */ new Color("#9b2c2c");
+  statusBarDebuggingBorder = /* ............................ */ new Color("#770000");
+  statusBarDebuggingForeground = /* ........................ */ new Color("#fdf7f7");
+  statusBarForeground = /* ................................. */ new Color("#f5fff5");
+  statusBarNoFolderBackground = /* ......................... */ new Color("#553c9a");
+  statusBarNoFolderForeground = /* ......................... */ new Color("#ede9f6");
+  statusBarRemoteBackground = /* ........................... */ new Color("#660066");
+  statusBarRemoteForeground = /* ........................... */ new Color("#fff5ff");
+  tabActiveBorder = /* ..................................... */ new Color("#009900");
+  textLinkForeground = /* .................................. */ new Color("#89b971");
 
-    // workbench colors
-    // eslint-disable-next-line sort-keys
-    background: colorDescriptor(new Color(mix("0", bg))),
-    background11: colorDescriptor(new Color(mix("11", bg))),
-    background1a: colorDescriptor(new Color(mix("1a", bg))),
-    background22: colorDescriptor(new Color(mix("22", bg))),
-    background25: colorDescriptor(new Color(mix("25", bg))),
-    background33: colorDescriptor(new Color(mix("33", bg))),
-    background44: colorDescriptor(new Color(mix("44", bg))),
-    background55: colorDescriptor(new Color(mix("55", bg))),
-    background66: colorDescriptor(new Color(mix("66", bg))),
-    background77: colorDescriptor(new Color(mix("77", bg))),
-    background88: colorDescriptor(new Color(mix("88", bg))),
-    background99: colorDescriptor(new Color(mix("99", bg))),
-    backgroundaa: colorDescriptor(new Color(mix("aa", bg))),
-    backgroundbb: colorDescriptor(new Color(mix("bb", bg))),
-    backgroundc5: colorDescriptor(new Color(mix("c5", bg))),
-    backgroundcc: colorDescriptor(new Color(mix("cc", bg))),
-    backgrounddd: colorDescriptor(new Color(mix("dd", bg))),
-    backgrounde5: colorDescriptor(new Color(mix("e5", bg))),
-    backgroundee: colorDescriptor(new Color(mix("ee", bg))),
+  // bracket pairs
+  // eslint-disable-next-line sort-keys
+  bracketPair1 = new Color("#f2f28c");
+  bracketPair2 = new Color("#c982c1");
+  bracketPair3 = new Color("#93ecb8");
+  bracketPair4 = new Color("#c3ab85");
+  bracketPair5 = new Color("#7dbbe8");
+  bracketPair6 = new Color("#ff99b3");
 
-    contrastBackground: colorDescriptor(new Color("#030612")),
+  // terminal colors
+  // eslint-disable-next-line sort-keys
+  ansiBrightBlack = /* ..... */ new Color("#888b92"); // background88
+  ansiBrightBlue = /* ...... */ new Color("#80bfff");
+  ansiBrightCyan = /* ...... */ new Color("#a0f1f8");
+  ansiBrightGreen = /* ..... */ new Color("#89b971");
+  ansiBrightMagenta = /* ... */ new Color("#f28ca6");
+  ansiBrightRed = /* ....... */ new Color("#f18a7e");
+  ansiBrightWhite = /* ..... */ new Color("#c5c6c9"); // backgroundc5
+  // eslint-disable-next-line sort-keys
+  ansiBlack = /* ........... */ new Color("#353a45"); // background33
+  ansiBlue = /* ............ */ new Color("#829dc9");
+  ansiBrightYellow = /* .... */ new Color("#f5d780");
+  ansiCyan = /* ............ */ new Color("#0fc6d7");
+  ansiGreen = /* ........... */ new Color("#85c3ab");
+  ansiMagenta = /* ......... */ new Color("#c982c1");
+  ansiRed = /* ............. */ new Color("#ff7575");
+  ansiWhite = /* ........... */ new Color("#acaeb3");
+  ansiYellow = /* .......... */ new Color("#d9d326");
 
-    // eslint-disable-next-line sort-keys
-    activeIndentGuideBackground: /* ......................... */ colorDescriptor(new Color("#53ac53")),
-    activityBarBadgeBackground: /* .......................... */ colorDescriptor(new Color("#006600")),
-    activityBarBadgeForeground: /* .......................... */ colorDescriptor(new Color("#f5fff5")),
-    buttonBackground: /* .................................... */ colorDescriptor(new Color(mix("44", bg))),
-    buttonForeground: /* .................................... */ colorDescriptor(new Color(mix("cc", bg))),
-    buttonHoverBackground: /* ............................... */ colorDescriptor(new Color(mix("33", bg))),
-    disabledForeground: /* .................................. */ colorDescriptor(new Color(mix("77", bg))),
-    editorInfoForeground: /* ................................ */ colorDescriptor(new Color("#02cad4")),
-    editorLightBulbAutoFixForeground: /* .................... */ colorDescriptor(new Color("#f2f28c")),
-    editorLightBulbForeground: /* ........................... */ colorDescriptor(new Color("#f1836f")),
-    editorWarningBackground: /* ............................. */ colorDescriptor(new Color("#d9d32633")),
-    editorWarningForeground: /* ............................. */ colorDescriptor(new Color("#d9d326")),
-    errorForeground: /* ..................................... */ colorDescriptor(new Color("#ff7575")),
-    gitDecorationAddedResourceForeground: /* ................ */ colorDescriptor(new Color("#81b88b")),
-    gitDecorationDeletedResourceForeground: /* .............. */ colorDescriptor(new Color("#c74e39")),
-    gitDecorationModifiedResourceForeground: /* ............. */ colorDescriptor(new Color("#e2c08d")),
-    gitDecorationUntrackedResourceForeground: /* ............ */ colorDescriptor(new Color("#73c991")),
-    inlineValuesBackground: /* .............................. */ colorDescriptor(new Color("#c3ab8555")),
-    inlineValuesForeground: /* .............................. */ colorDescriptor(new Color(mix("cc", bg))),
-    inputOptionActiveBackground: /* ......................... */ colorDescriptor(new Color(mix("44", bg))),
-    inputOptionHoverBackground: /* .......................... */ colorDescriptor(new Color(mix("33", bg))),
-    listFocusBackground: /* ................................. */ colorDescriptor(new Color("#000000f0")),
-    menuForeground: /* ...................................... */ colorDescriptor(new Color(mix("aa", bg))),
-    minimapSelectionHighlight: /* ........................... */ colorDescriptor(new Color("#00660066")),
-    progressBarBackground: /* ............................... */ colorDescriptor(new Color("#d9d326")),
-    sideBySideEditorBorder: /* .............................. */ colorDescriptor(new Color(mix("22", bg))),
-    statusBarBackground: /* ................................. */ colorDescriptor(new Color("#006600")),
-    statusBarDebuggingBackground: /* ........................ */ colorDescriptor(new Color("#9b2c2c")),
-    statusBarDebuggingBorder: /* ............................ */ colorDescriptor(new Color("#770000")),
-    statusBarDebuggingForeground: /* ........................ */ colorDescriptor(new Color("#fdf7f7")),
-    statusBarForeground: /* ................................. */ colorDescriptor(new Color("#f5fff5")),
-    statusBarNoFolderBackground: /* ......................... */ colorDescriptor(new Color("#553c9a")),
-    statusBarNoFolderForeground: /* ......................... */ colorDescriptor(new Color("#ede9f6")),
-    statusBarRemoteBackground: /* ........................... */ colorDescriptor(new Color("#660066")),
-    statusBarRemoteForeground: /* ........................... */ colorDescriptor(new Color("#fff5ff")),
-    tabActiveBorder: /* ..................................... */ colorDescriptor(new Color("#009900")),
-    textLinkForeground: /* .................................. */ colorDescriptor(new Color("#89b971")),
+  // other properties
+  name = "Night Coder";
+  variant = "Main";
 
-    // bracket pairs
-    // eslint-disable-next-line sort-keys
-    bracketPair1: colorDescriptor(new Color("#f2f28c")),
-    bracketPair2: colorDescriptor(new Color("#c982c1")),
-    bracketPair3: colorDescriptor(new Color("#93ecb8")),
-    bracketPair4: colorDescriptor(new Color("#c3ab85")),
-    bracketPair5: colorDescriptor(new Color("#7dbbe8")),
-    bracketPair6: colorDescriptor(new Color("#ff99b3")),
+  constructor() {
+    Object.defineProperty(this, "name", { enumerable: false });
+    Object.defineProperty(this, "variant", { enumerable: false });
+  }
 
-    // terminal colors
-    // eslint-disable-next-line sort-keys
-    ansiBrightBlack: /* ..... */ colorDescriptor(new Color("#888b92")), // background88
-    ansiBrightBlue: /* ...... */ colorDescriptor(new Color("#80bfff")),
-    ansiBrightCyan: /* ...... */ colorDescriptor(new Color("#a0f1f8")),
-    ansiBrightGreen: /* ..... */ colorDescriptor(new Color("#89b971")),
-    ansiBrightMagenta: /* ... */ colorDescriptor(new Color("#f28ca6")),
-    ansiBrightRed: /* ....... */ colorDescriptor(new Color("#f18a7e")),
-    ansiBrightWhite: /* ..... */ colorDescriptor(new Color("#c5c6c9")), // backgroundc5
-    // eslint-disable-next-line sort-keys
-    ansiBlack: /* ........... */ colorDescriptor(new Color("#353a45")), // background33
-    ansiBlue: /* ............ */ colorDescriptor(new Color("#829dc9")),
-    ansiBrightYellow: /* .... */ colorDescriptor(new Color("#f5d780")),
-    ansiCyan: /* ............ */ colorDescriptor(new Color("#0fc6d7")),
-    ansiGreen: /* ........... */ colorDescriptor(new Color("#85c3ab")),
-    ansiMagenta: /* ......... */ colorDescriptor(new Color("#c982c1")),
-    ansiRed: /* ............. */ colorDescriptor(new Color("#ff7575")),
-    ansiWhite: /* ........... */ colorDescriptor(new Color("#acaeb3")),
-    ansiYellow: /* .......... */ colorDescriptor(new Color("#d9d326")),
-  }) {
-    name: string;
-    variant: string;
+  baseColor(): string {
+    return "#030917";
+  }
 
-    constructor(name: string, title: string) {
-      super();
-      this.name = name;
-      this.variant = title;
-      Object.defineProperty(this, "name", { enumerable: false });
-      Object.defineProperty(this, "variant", { enumerable: false });
-    }
+  fullName(): string {
+    return [this.name, this.variant].filter((s) => s !== "Main").join(" ");
+  }
 
-    fullName(): string {
-      return [this.name, this.variant].filter((s) => s !== "Main").join(" ");
-    }
+  filename(): string {
+    return this.fullName().trim().toLowerCase().replace(/ +/g, "-");
+  }
 
-    filename(): string {
-      return this.fullName().trim().toLowerCase().replace(/ +/g, "-");
-    }
-
-    toString(): string {
-      return Object.entries(
-        Object.values(this)
-          .map((c) => [c.code, c.description])
-          .reduce((acc, nv) => {
-            acc[nv[0]] ? (acc[nv[0]] += `, ${nv[1]}`) : (acc[nv[0]] = nv[1]);
-            return acc;
-          }, [])
+  toString(): string {
+    return Object.entries(
+      Object.values(this)
+        .map((c) => [c.code, c.description])
+        .reduce((acc, nv) => {
+          acc[nv[0]] ? (acc[nv[0]] += `, ${nv[1]}`) : (acc[nv[0]] = nv[1]);
+          return acc;
+        }, [])
+    )
+      .map((c) =>
+        [
+          "",
+          c[1],
+          `![${c[0]}](https://via.placeholder.com/23/${c[0].replace("#", "")}/?text=+)`,
+          c[0].toLocaleUpperCase(),
+          "",
+        ].join("|")
       )
-        .map((c) =>
-          [
-            "",
-            c[1],
-            `![${c[0]}](https://via.placeholder.com/23/${c[0].replace("#", "")}/?text=+)`,
-            c[0].toLocaleUpperCase(),
-            "",
-          ].join("|")
-        )
-        .join("\n");
-    }
+      .join("\n");
+  }
 
-    toMarkdownTable(): string {
-      return [
-        `### ${this.variant} variant`,
-        "",
-        "| Scope | Color | Hex |",
-        "|:------|:-----:|:----|",
-        this.toString(),
-      ].join("\n");
-    }
-  };
+  toMarkdownTable(): string {
+    return [
+      `### ${this.variant} variant`,
+      "",
+      "| Scope | Color | Hex |",
+      "|:------|:-----:|:----|",
+      this.toString(),
+    ].join("\n");
+  }
 }
 
-export type Palette = InstanceType<ReturnType<typeof colorPaletteFactory>>;
+// export type Palette = InstanceType<ReturnType<typeof colorPaletteFactory>>;
 const availablePalettes: Palette[] = [];
 
 // Palette defining files must import this and register the palette

@@ -34,196 +34,171 @@ function hexAlphaToDec(alpha) {
 function mix(alpha, background) {
     return chroma.mix(background, "#ffffff", hexAlphaToDec(alpha), "rgb").toString();
 }
-function colorDescriptor(c, enumerable = false) {
-    return () => {
-        let color = c;
-        return {
-            enumerable: enumerable,
-            get() {
-                return color;
-            },
-            set(c) {
-                color = c;
-            },
-        };
-    };
-}
-function BasePalette(descriptors) {
-    return class {
-        constructor() {
-            let k;
-            for (k in descriptors) {
-                Object.defineProperty(this, k, descriptors[k]());
-            }
-        }
-    };
-}
-export function colorPaletteFactory(bg = "#030917") {
-    return class ColorPalette extends BasePalette({
-        annotationColor: colorDescriptor(new Color("#c3ab85", "Annotation"), true),
-        commentColor: colorDescriptor(new Color(mix("44", bg), "Comment"), true),
-        comparisonLogicalOperatorColor: colorDescriptor(new Color("#93ecb8", "Comparison/Logical operator"), true),
-        constantColor: colorDescriptor(new Color("#f1836f", "Constant"), true),
-        defaultLibraryClassTypeColor: colorDescriptor(new Color("#ff99b3", "Default library class/type"), true),
-        defaultLibraryFunctionColor: colorDescriptor(new Color("#7dbbe8", "Default library function"), true),
-        documentationColor: colorDescriptor(new Color(mix("aa", bg), "Documentation"), true),
-        foregroundColor: colorDescriptor(new Color(mix("c0", bg), "Foreground"), true),
-        functionCallColor: colorDescriptor(new Color("#ddc888", "Function call"), true),
-        functionDeclarationColor: colorDescriptor(new Color("#85c3ab", "Function declaration"), true),
-        importColor: colorDescriptor(new Color("#8dbf82", "Import/Require/Use"), true),
-        keywordColor: colorDescriptor(new Color("#c982c1", "Keyword"), true),
-        literalConstantColor: colorDescriptor(new Color("#bfa6f2", "Literal constant"), true),
-        miscellaneousColor: colorDescriptor(new Color("#c3ab85", "Miscellaneous"), true),
-        namespaceClassStructColor: colorDescriptor(new Color("#829dc9", "Namespace/Class/Struct"), true),
-        operatorColor: colorDescriptor(new Color("#f2f28c", "Operator"), true),
-        parameterArgumentColor: colorDescriptor(new Color(mix("e5", bg), "Parameter, Argument"), true),
-        propertyColor: colorDescriptor(new Color("#e4aa81", "Property"), true),
-        stringColor: colorDescriptor(new Color("#8dbf82", "String"), true),
-        typeColor: colorDescriptor(new Color("#0bc2cb", "Type"), true),
-        variableColor: colorDescriptor(new Color(mix("c0", bg), "Variable"), true),
-        attributeNameColor: colorDescriptor(new Color("#ddc888", "Attribute name"), true),
-        customTagColor: colorDescriptor(new Color("#bfa6f2", "HTML custom tag"), true),
-        headingColor: colorDescriptor(new Color("#ddc888", "Heading"), true),
-        inlineTagColor: colorDescriptor(new Color("#7dbbe8", "HTML inline tag"), true),
-        italicColor: colorDescriptor(new Color("#93ecb8", "Italic"), true),
-        linkTagColor: colorDescriptor(new Color("#85c3ab", "HTML link tag"), true),
-        metaTagColor: colorDescriptor(new Color("#c982c1", "HTML meta tag"), true),
-        objectTagColor: colorDescriptor(new Color("#ff99b3", "HTML object tag"), true),
-        scriptTagColor: colorDescriptor(new Color("#d9d326", "Script tag"), true),
-        styleTagColor: colorDescriptor(new Color("#829dc9", "HTML style tag"), true),
-        tagColor: colorDescriptor(new Color("#e4aa81", "Tag"), true),
-        tagPunctuationColor: colorDescriptor(new Color(mix("77", bg), "Tag punctuation"), true),
-        unrecognizedTagColor: colorDescriptor(new Color("#f1836f", "HTML unrecognized tag"), true),
-        jsonLevel01Color: colorDescriptor(new Color("#e4aa81", "Level 1 JSON key"), true),
-        jsonLevel02Color: colorDescriptor(new Color("#c982c1", "Level 2 JSON key"), true),
-        jsonLevel03Color: colorDescriptor(new Color("#0bc2cb", "Level 3 JSON key"), true),
-        jsonLevel04Color: colorDescriptor(new Color("#ddc888", "Level 4 JSON key"), true),
-        jsonLevel05Color: colorDescriptor(new Color("#ff99b3", "Level 5 JSON key"), true),
-        jsonLevel06Color: colorDescriptor(new Color("#7dbbe8", "Level 6 JSON key"), true),
-        jsonLevel07Color: colorDescriptor(new Color("#829dc9", "Level 7 JSON key"), true),
-        jsonLevel08Color: colorDescriptor(new Color("#f1836f", "Level 8 JSON key"), true),
-        jsonLevel09Color: colorDescriptor(new Color("#c3ab85", "Level 9 JSON key"), true),
-        jsonLevel10Color: colorDescriptor(new Color("#d9d326", "Level 10 JSON key"), true),
-        jsonLevel11Color: colorDescriptor(new Color("#e4aa81", "Level > 10 JSON key"), true),
-        background: colorDescriptor(new Color(mix("0", bg))),
-        background11: colorDescriptor(new Color(mix("11", bg))),
-        background1a: colorDescriptor(new Color(mix("1a", bg))),
-        background22: colorDescriptor(new Color(mix("22", bg))),
-        background25: colorDescriptor(new Color(mix("25", bg))),
-        background33: colorDescriptor(new Color(mix("33", bg))),
-        background44: colorDescriptor(new Color(mix("44", bg))),
-        background55: colorDescriptor(new Color(mix("55", bg))),
-        background66: colorDescriptor(new Color(mix("66", bg))),
-        background77: colorDescriptor(new Color(mix("77", bg))),
-        background88: colorDescriptor(new Color(mix("88", bg))),
-        background99: colorDescriptor(new Color(mix("99", bg))),
-        backgroundaa: colorDescriptor(new Color(mix("aa", bg))),
-        backgroundbb: colorDescriptor(new Color(mix("bb", bg))),
-        backgroundc5: colorDescriptor(new Color(mix("c5", bg))),
-        backgroundcc: colorDescriptor(new Color(mix("cc", bg))),
-        backgrounddd: colorDescriptor(new Color(mix("dd", bg))),
-        backgrounde5: colorDescriptor(new Color(mix("e5", bg))),
-        backgroundee: colorDescriptor(new Color(mix("ee", bg))),
-        contrastBackground: colorDescriptor(new Color("#030612")),
-        activeIndentGuideBackground: colorDescriptor(new Color("#53ac53")),
-        activityBarBadgeBackground: colorDescriptor(new Color("#006600")),
-        activityBarBadgeForeground: colorDescriptor(new Color("#f5fff5")),
-        buttonBackground: colorDescriptor(new Color(mix("44", bg))),
-        buttonForeground: colorDescriptor(new Color(mix("cc", bg))),
-        buttonHoverBackground: colorDescriptor(new Color(mix("33", bg))),
-        disabledForeground: colorDescriptor(new Color(mix("77", bg))),
-        editorInfoForeground: colorDescriptor(new Color("#02cad4")),
-        editorLightBulbAutoFixForeground: colorDescriptor(new Color("#f2f28c")),
-        editorLightBulbForeground: colorDescriptor(new Color("#f1836f")),
-        editorWarningBackground: colorDescriptor(new Color("#d9d32633")),
-        editorWarningForeground: colorDescriptor(new Color("#d9d326")),
-        errorForeground: colorDescriptor(new Color("#ff7575")),
-        gitDecorationAddedResourceForeground: colorDescriptor(new Color("#81b88b")),
-        gitDecorationDeletedResourceForeground: colorDescriptor(new Color("#c74e39")),
-        gitDecorationModifiedResourceForeground: colorDescriptor(new Color("#e2c08d")),
-        gitDecorationUntrackedResourceForeground: colorDescriptor(new Color("#73c991")),
-        inlineValuesBackground: colorDescriptor(new Color("#c3ab8555")),
-        inlineValuesForeground: colorDescriptor(new Color(mix("cc", bg))),
-        inputOptionActiveBackground: colorDescriptor(new Color(mix("44", bg))),
-        inputOptionHoverBackground: colorDescriptor(new Color(mix("33", bg))),
-        listFocusBackground: colorDescriptor(new Color("#000000f0")),
-        menuForeground: colorDescriptor(new Color(mix("aa", bg))),
-        minimapSelectionHighlight: colorDescriptor(new Color("#00660066")),
-        progressBarBackground: colorDescriptor(new Color("#d9d326")),
-        sideBySideEditorBorder: colorDescriptor(new Color(mix("22", bg))),
-        statusBarBackground: colorDescriptor(new Color("#006600")),
-        statusBarDebuggingBackground: colorDescriptor(new Color("#9b2c2c")),
-        statusBarDebuggingBorder: colorDescriptor(new Color("#770000")),
-        statusBarDebuggingForeground: colorDescriptor(new Color("#fdf7f7")),
-        statusBarForeground: colorDescriptor(new Color("#f5fff5")),
-        statusBarNoFolderBackground: colorDescriptor(new Color("#553c9a")),
-        statusBarNoFolderForeground: colorDescriptor(new Color("#ede9f6")),
-        statusBarRemoteBackground: colorDescriptor(new Color("#660066")),
-        statusBarRemoteForeground: colorDescriptor(new Color("#fff5ff")),
-        tabActiveBorder: colorDescriptor(new Color("#009900")),
-        textLinkForeground: colorDescriptor(new Color("#89b971")),
-        bracketPair1: colorDescriptor(new Color("#f2f28c")),
-        bracketPair2: colorDescriptor(new Color("#c982c1")),
-        bracketPair3: colorDescriptor(new Color("#93ecb8")),
-        bracketPair4: colorDescriptor(new Color("#c3ab85")),
-        bracketPair5: colorDescriptor(new Color("#7dbbe8")),
-        bracketPair6: colorDescriptor(new Color("#ff99b3")),
-        ansiBrightBlack: colorDescriptor(new Color("#888b92")),
-        ansiBrightBlue: colorDescriptor(new Color("#80bfff")),
-        ansiBrightCyan: colorDescriptor(new Color("#a0f1f8")),
-        ansiBrightGreen: colorDescriptor(new Color("#89b971")),
-        ansiBrightMagenta: colorDescriptor(new Color("#f28ca6")),
-        ansiBrightRed: colorDescriptor(new Color("#f18a7e")),
-        ansiBrightWhite: colorDescriptor(new Color("#c5c6c9")),
-        ansiBlack: colorDescriptor(new Color("#353a45")),
-        ansiBlue: colorDescriptor(new Color("#829dc9")),
-        ansiBrightYellow: colorDescriptor(new Color("#f5d780")),
-        ansiCyan: colorDescriptor(new Color("#0fc6d7")),
-        ansiGreen: colorDescriptor(new Color("#85c3ab")),
-        ansiMagenta: colorDescriptor(new Color("#c982c1")),
-        ansiRed: colorDescriptor(new Color("#ff7575")),
-        ansiWhite: colorDescriptor(new Color("#acaeb3")),
-        ansiYellow: colorDescriptor(new Color("#d9d326")),
-    }) {
-        constructor(name, title) {
-            super();
-            this.name = name;
-            this.variant = title;
-            Object.defineProperty(this, "name", { enumerable: false });
-            Object.defineProperty(this, "variant", { enumerable: false });
-        }
-        fullName() {
-            return [this.name, this.variant].filter((s) => s !== "Main").join(" ");
-        }
-        filename() {
-            return this.fullName().trim().toLowerCase().replace(/ +/g, "-");
-        }
-        toString() {
-            return Object.entries(Object.values(this)
-                .map((c) => [c.code, c.description])
-                .reduce((acc, nv) => {
-                acc[nv[0]] ? (acc[nv[0]] += `, ${nv[1]}`) : (acc[nv[0]] = nv[1]);
-                return acc;
-            }, []))
-                .map((c) => [
-                "",
-                c[1],
-                `![${c[0]}](https://via.placeholder.com/23/${c[0].replace("#", "")}/?text=+)`,
-                c[0].toLocaleUpperCase(),
-                "",
-            ].join("|"))
-                .join("\n");
-        }
-        toMarkdownTable() {
-            return [
-                `### ${this.variant} variant`,
-                "",
-                "| Scope | Color | Hex |",
-                "|:------|:-----:|:----|",
-                this.toString(),
-            ].join("\n");
-        }
-    };
+export class Palette {
+    constructor() {
+        this.annotationColor = new Color("#c3ab85", "Annotation");
+        this.commentColor = new Color(mix("44", this.baseColor()), "Comment");
+        this.comparisonLogicalOperatorColor = new Color("#93ecb8", "Comparison/Logical operator");
+        this.constantColor = new Color("#f1836f", "Constant");
+        this.defaultLibraryClassTypeColor = new Color("#ff99b3", "Default library class/type");
+        this.defaultLibraryFunctionColor = new Color("#7dbbe8", "Default library function");
+        this.documentationColor = new Color(mix("aa", this.baseColor()), "Documentation");
+        this.foregroundColor = new Color(mix("c0", this.baseColor()), "Foreground");
+        this.functionCallColor = new Color("#ddc888", "Function call");
+        this.functionDeclarationColor = new Color("#85c3ab", "Function declaration");
+        this.importColor = new Color("#8dbf82", "Import/Require/Use");
+        this.keywordColor = new Color("#c982c1", "Keyword");
+        this.literalConstantColor = new Color("#bfa6f2", "Literal constant");
+        this.miscellaneousColor = new Color("#c3ab85", "Miscellaneous");
+        this.namespaceClassStructColor = new Color("#829dc9", "Namespace/Class/Struct");
+        this.operatorColor = new Color("#f2f28c", "Operator");
+        this.parameterArgumentColor = new Color(mix("e5", this.baseColor()), "Parameter, Argument");
+        this.propertyColor = new Color("#e4aa81", "Property");
+        this.stringColor = new Color("#8dbf82", "String");
+        this.typeColor = new Color("#0bc2cb", "Type");
+        this.variableColor = new Color(mix("c0", this.baseColor()), "Variable");
+        this.attributeNameColor = new Color("#ddc888", "Attribute name");
+        this.customTagColor = new Color("#bfa6f2", "HTML custom tag");
+        this.headingColor = new Color("#ddc888", "Heading");
+        this.inlineTagColor = new Color("#7dbbe8", "HTML inline tag");
+        this.italicColor = new Color("#93ecb8", "Italic");
+        this.linkTagColor = new Color("#85c3ab", "HTML link tag");
+        this.metaTagColor = new Color("#c982c1", "HTML meta tag");
+        this.objectTagColor = new Color("#ff99b3", "HTML object tag");
+        this.scriptTagColor = new Color("#d9d326", "Script tag");
+        this.styleTagColor = new Color("#829dc9", "HTML style tag");
+        this.tagColor = new Color("#e4aa81", "Tag");
+        this.tagPunctuationColor = new Color(mix("77", this.baseColor()), "Tag punctuation");
+        this.unrecognizedTagColor = new Color("#f1836f", "HTML unrecognized tag");
+        this.jsonLevel01Color = new Color("#e4aa81", "Level 1 JSON key");
+        this.jsonLevel02Color = new Color("#c982c1", "Level 2 JSON key");
+        this.jsonLevel03Color = new Color("#0bc2cb", "Level 3 JSON key");
+        this.jsonLevel04Color = new Color("#ddc888", "Level 4 JSON key");
+        this.jsonLevel05Color = new Color("#ff99b3", "Level 5 JSON key");
+        this.jsonLevel06Color = new Color("#7dbbe8", "Level 6 JSON key");
+        this.jsonLevel07Color = new Color("#829dc9", "Level 7 JSON key");
+        this.jsonLevel08Color = new Color("#f1836f", "Level 8 JSON key");
+        this.jsonLevel09Color = new Color("#c3ab85", "Level 9 JSON key");
+        this.jsonLevel10Color = new Color("#d9d326", "Level 10 JSON key");
+        this.jsonLevel11Color = new Color("#e4aa81", "Level > 10 JSON key");
+        this.background = new Color(mix("0", this.baseColor()));
+        this.background11 = new Color(mix("11", this.baseColor()));
+        this.background1a = new Color(mix("1a", this.baseColor()));
+        this.background22 = new Color(mix("22", this.baseColor()));
+        this.background25 = new Color(mix("25", this.baseColor()));
+        this.background33 = new Color(mix("33", this.baseColor()));
+        this.background44 = new Color(mix("44", this.baseColor()));
+        this.background55 = new Color(mix("55", this.baseColor()));
+        this.background66 = new Color(mix("66", this.baseColor()));
+        this.background77 = new Color(mix("77", this.baseColor()));
+        this.background88 = new Color(mix("88", this.baseColor()));
+        this.background99 = new Color(mix("99", this.baseColor()));
+        this.backgroundaa = new Color(mix("aa", this.baseColor()));
+        this.backgroundbb = new Color(mix("bb", this.baseColor()));
+        this.backgroundc5 = new Color(mix("c5", this.baseColor()));
+        this.backgroundcc = new Color(mix("cc", this.baseColor()));
+        this.backgrounddd = new Color(mix("dd", this.baseColor()));
+        this.backgrounde5 = new Color(mix("e5", this.baseColor()));
+        this.backgroundee = new Color(mix("ee", this.baseColor()));
+        this.contrastBackground = new Color("#030612");
+        this.activeIndentGuideBackground = new Color("#53ac53");
+        this.activityBarBadgeBackground = new Color("#006600");
+        this.activityBarBadgeForeground = new Color("#f5fff5");
+        this.buttonBackground = new Color(mix("44", this.baseColor()));
+        this.buttonForeground = new Color(mix("cc", this.baseColor()));
+        this.buttonHoverBackground = new Color(mix("33", this.baseColor()));
+        this.disabledForeground = new Color(mix("77", this.baseColor()));
+        this.editorInfoForeground = new Color("#02cad4");
+        this.editorLightBulbAutoFixForeground = new Color("#f2f28c");
+        this.editorLightBulbForeground = new Color("#f1836f");
+        this.editorWarningBackground = new Color("#d9d32633");
+        this.editorWarningForeground = new Color("#d9d326");
+        this.errorForeground = new Color("#ff7575");
+        this.gitDecorationAddedResourceForeground = new Color("#81b88b");
+        this.gitDecorationDeletedResourceForeground = new Color("#c74e39");
+        this.gitDecorationModifiedResourceForeground = new Color("#e2c08d");
+        this.gitDecorationUntrackedResourceForeground = new Color("#73c991");
+        this.inlineValuesBackground = new Color("#c3ab8555");
+        this.inlineValuesForeground = new Color(mix("cc", this.baseColor()));
+        this.inputOptionActiveBackground = new Color(mix("44", this.baseColor()));
+        this.inputOptionHoverBackground = new Color(mix("33", this.baseColor()));
+        this.listFocusBackground = new Color("#000000f0");
+        this.menuForeground = new Color(mix("aa", this.baseColor()));
+        this.minimapSelectionHighlight = new Color("#00660066");
+        this.progressBarBackground = new Color("#d9d326");
+        this.sideBySideEditorBorder = new Color(mix("22", this.baseColor()));
+        this.statusBarBackground = new Color("#006600");
+        this.statusBarDebuggingBackground = new Color("#9b2c2c");
+        this.statusBarDebuggingBorder = new Color("#770000");
+        this.statusBarDebuggingForeground = new Color("#fdf7f7");
+        this.statusBarForeground = new Color("#f5fff5");
+        this.statusBarNoFolderBackground = new Color("#553c9a");
+        this.statusBarNoFolderForeground = new Color("#ede9f6");
+        this.statusBarRemoteBackground = new Color("#660066");
+        this.statusBarRemoteForeground = new Color("#fff5ff");
+        this.tabActiveBorder = new Color("#009900");
+        this.textLinkForeground = new Color("#89b971");
+        this.bracketPair1 = new Color("#f2f28c");
+        this.bracketPair2 = new Color("#c982c1");
+        this.bracketPair3 = new Color("#93ecb8");
+        this.bracketPair4 = new Color("#c3ab85");
+        this.bracketPair5 = new Color("#7dbbe8");
+        this.bracketPair6 = new Color("#ff99b3");
+        this.ansiBrightBlack = new Color("#888b92");
+        this.ansiBrightBlue = new Color("#80bfff");
+        this.ansiBrightCyan = new Color("#a0f1f8");
+        this.ansiBrightGreen = new Color("#89b971");
+        this.ansiBrightMagenta = new Color("#f28ca6");
+        this.ansiBrightRed = new Color("#f18a7e");
+        this.ansiBrightWhite = new Color("#c5c6c9");
+        this.ansiBlack = new Color("#353a45");
+        this.ansiBlue = new Color("#829dc9");
+        this.ansiBrightYellow = new Color("#f5d780");
+        this.ansiCyan = new Color("#0fc6d7");
+        this.ansiGreen = new Color("#85c3ab");
+        this.ansiMagenta = new Color("#c982c1");
+        this.ansiRed = new Color("#ff7575");
+        this.ansiWhite = new Color("#acaeb3");
+        this.ansiYellow = new Color("#d9d326");
+        this.name = "Night Coder";
+        this.variant = "Main";
+        Object.defineProperty(this, "name", { enumerable: false });
+        Object.defineProperty(this, "variant", { enumerable: false });
+    }
+    baseColor() {
+        return "#030917";
+    }
+    fullName() {
+        return [this.name, this.variant].filter((s) => s !== "Main").join(" ");
+    }
+    filename() {
+        return this.fullName().trim().toLowerCase().replace(/ +/g, "-");
+    }
+    toString() {
+        return Object.entries(Object.values(this)
+            .map((c) => [c.code, c.description])
+            .reduce((acc, nv) => {
+            acc[nv[0]] ? (acc[nv[0]] += `, ${nv[1]}`) : (acc[nv[0]] = nv[1]);
+            return acc;
+        }, []))
+            .map((c) => [
+            "",
+            c[1],
+            `![${c[0]}](https://via.placeholder.com/23/${c[0].replace("#", "")}/?text=+)`,
+            c[0].toLocaleUpperCase(),
+            "",
+        ].join("|"))
+            .join("\n");
+    }
+    toMarkdownTable() {
+        return [
+            `### ${this.variant} variant`,
+            "",
+            "| Scope | Color | Hex |",
+            "|:------|:-----:|:----|",
+            this.toString(),
+        ].join("\n");
+    }
 }
 const availablePalettes = [];
 export function registerPalette(p) {
