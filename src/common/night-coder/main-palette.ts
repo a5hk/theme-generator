@@ -1,4 +1,4 @@
-import { Palette, registerPalette } from "./colors.js";
+import { Palette, registerPalette } from "../colors.js";
 
 export class NightCoderPalette extends Palette {}
 

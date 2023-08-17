@@ -1,6 +1,6 @@
 import chroma from "chroma-js";
 
-import { Palette, Color, registerPalette } from "./colors.js";
+import { Palette, Color, registerPalette } from "../colors.js";
 
 function hexAlphaToDec(alpha: string): number {
   return parseInt(alpha, 16) / 255;

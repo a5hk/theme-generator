@@ -1,4 +1,4 @@
-import { Palette, Color, registerPalette } from "./colors.js";
+import { Palette, Color, registerPalette } from "../colors.js";
 
 class IcePalette extends Palette {
   contrastBackground = new Color("#012237");

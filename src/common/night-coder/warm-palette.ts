@@ -1,4 +1,4 @@
-import { Palette, Color, registerPalette } from "./colors.js";
+import { Palette, Color, registerPalette } from "../colors.js";
 import { NightCoderPalette } from "./main-palette.js";
 
 class NightCoderWarmPalette extends NightCoderPalette {
