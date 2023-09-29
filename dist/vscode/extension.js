@@ -79,7 +79,7 @@ export class NightCoder extends Extension {
         this.name = "night-coder";
         this.displayName = "Night Coder";
         this.description = "A dark theme for Night Coders";
-        this.version = "4.4.3";
+        this.version = "4.5.0";
         this.keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
         this.homepage = "https://github.com/a5hk/night-coder";
         this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
@@ -99,11 +99,11 @@ export class NightCoder extends Extension {
 [![Preview in vscode.dev](https://img.shields.io/badge/preview%20in-vscode.dev-060?style=for-the-badge&labelColor=030917)]${this.previewURL("Night Coder")}
 
 A dark theme for Night Coders. There are three main variants:
-- **Night Coder** The first and main variant
-- **Night Coder Gray** For those who prefer a little lighter background
-- **Night Coder Warm** The lively and happier version, inspired by [Mayukai Sunset](https://marketplace.visualstudio.com/items?itemName=GulajavaMinistudio.mayukaithemevsc)
+- **Night Coder Ember** A color scheme with a very dark blue background and variety of cold and warm colors.
+- **Night Coder Smoke** For those who prefer a little lighter background.
+- **Night Coder Flame** A color scheme that evokes the intensity and warmth of fire, with shades of red, orange, and yellow that create a vibrant and energetic mood, inspired by [Mayukai Sunset](https://marketplace.visualstudio.com/items?itemName=GulajavaMinistudio.mayukaithemevsc)
 
-Each of these main variants, has contrast and italic versions.
+Each of these main variants, has contrast and italic versions. Built using [Theme Generator](https://github.com/a5hk/theme-generator)
 
 ![html](/screenshot/demo.gif)
 
@@ -115,15 +115,15 @@ Each of these main variants, has contrast and italic versions.
 
 ## Screenshots
 
-### JavaScript [(Night Coder)]${this.previewURL("Night Coder")}
+### JavaScript [(Night Coder Ember)]${this.previewURL("Night Coder Ember")}
 
 ![javascript](/screenshot/n-javascript.png)
 
-### Python [(Night Coder Warm)]${this.previewURL("Night Coder Warm")}
+### Python [(Night Coder Flame)]${this.previewURL("Night Coder Flame")}
 
 ![python](/screenshot/nw-python.png)
 
-### JSON [(Night Coder Gray Contrast Italic)]${this.previewURL("Night Coder Gray Contrast Italic")}
+### JSON [(Night Coder Smoke Contrast Italic)]${this.previewURL("Night Coder Smoke Contrast Italic")}
 
 ![json](/screenshot/ngci-json.png)
 
@@ -143,7 +143,7 @@ export class Ice extends Extension {
         this.name = "ice";
         this.displayName = "Ice";
         this.description = "Cold as Ice";
-        this.version = "1.1.2";
+        this.version = "1.2.0";
         this.keywords = ["Ice", "Cold", "Dark", "Borderless", "Italic", "Contrast"];
         this.homepage = "https://github.com/a5hk/ice";
         this.repository = { type: "git", url: "https://github.com/a5hk/ice" };
@@ -153,9 +153,9 @@ export class Ice extends Extension {
     generateReadme() {
         return `# [Ice](https://marketplace.visualstudio.com/items?itemName=a5hk.ice)
 
-A freezing cold dark theme.
+A theme that mimics the frozen and crystalline beauty of ice.
 
-Also available for [vim](/vim/colors/), [bat](/bat/), and [Windows Terminal](/windows-terminal/).
+Also available for [vim](/vim/colors/), [bat](/bat/), and [Windows Terminal](/windows-terminal/). Built using [Theme Generator](https://github.com/a5hk/theme-generator)
 
 ## Screenshots
 
@@ -175,7 +175,7 @@ export class Paper extends Extension {
         this.name = "paper";
         this.displayName = "Paper";
         this.description = "Light theme with good contrast";
-        this.version = "1.1.4";
+        this.version = "1.2.0";
         this.keywords = ["Paper", "Light", "Borderless", "Italic", "Contrast"];
         this.homepage = "https://github.com/a5hk/paper";
         this.repository = { type: "git", url: "https://github.com/a5hk/paper" };
@@ -188,7 +188,7 @@ export class Paper extends Extension {
 
 The goal was to create a light theme with good contrast ratio and a yellowish paper like background color.
 
-Also available for [vim](/vim/colors/) and [Windows Terminal](/windows-terminal/).
+Also available for [vim](/vim/colors/) and [Windows Terminal](/windows-terminal/). Built using [Theme Generator](https://github.com/a5hk/theme-generator)
 
 ## Screenshots
 
