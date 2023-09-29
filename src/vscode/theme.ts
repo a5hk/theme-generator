@@ -40,6 +40,17 @@ export class VSTheme {
       .trim();
   }
 
+  get displayName(): string {
+    return [
+      this.palette.displayName, //
+      this.options.contrast ? "Contrast" : "",
+      this.options.italic ? "Italic" : "",
+    ]
+      .join(" ")
+      .replace(/ +/g, " ")
+      .trim();
+  }
+
   get workbenchColors(): workbenchColor {
     if (this.options.contrast) {
       return { ...commonWorkbenchColors(this.palette), ...contrastWorkbenchColors(this.palette) };
@@ -50,7 +61,7 @@ export class VSTheme {
 
   toManifestFormat(): VSThemeManifest {
     return {
-      label: this.label,
+      label: this.displayName,
       path: this.path,
       uiTheme: this.options.uiTheme,
     };

@@ -65,6 +65,7 @@ export class IcePalette extends Palette {
         this.statusBarRemoteBackground = new Color("#752018");
         this.statusBarRemoteForeground = new Color("#dee3e6");
         this.name = "Ice";
+        this.displayName = "Ice";
     }
     baseColor() {
         return "#012841";

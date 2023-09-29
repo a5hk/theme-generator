@@ -64,6 +64,7 @@ export class NightCoderGrayPalette extends NightCoderPalette {
         this.ansiWhite = this.backgroundc5;
         this.ansiYellow = new Color("#e0dc52");
         this.variant = "Gray";
+        this.displayName = "Night Coder Smoke";
     }
     baseColor() {
         return "#2c2c2c";

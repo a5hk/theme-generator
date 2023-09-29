@@ -177,6 +177,8 @@ export class Palette {
 
   // other properties
   name = "Night Coder";
+  // added this for compatibility reasons, didn't want to change file names.
+  displayName = "Night Coder Ember";
   variant = "Main";
   lightOrDark: "light" | "dark" = "dark";
 
@@ -184,6 +186,7 @@ export class Palette {
     Object.defineProperty(this, "name", { enumerable: false });
     Object.defineProperty(this, "variant", { enumerable: false });
     Object.defineProperty(this, "lightOrDark", { enumerable: false });
+    Object.defineProperty(this, "displayName", { enumerable: false });
   }
 
   baseColor(): string {
@@ -196,6 +199,11 @@ export class Palette {
 
   filename(): string {
     return this.fullName().trim().toLowerCase().replace(/ +/g, "-");
+  }
+
+  // FIXME
+  filenameBasedOnDisplayName(): string {
+    return this.displayName.trim().toLowerCase().replace(/ +/g, "-");
   }
 
   toString(): string {

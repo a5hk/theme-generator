@@ -160,6 +160,8 @@ export class TextmateTheme {
                     "storage.modifier",
                     "storage.type.class",
                     "storage.type.function",
+                    "storage.type.interface",
+                    "storage.type.type",
                 ],
                 settings: {
                     foreground: this.palette.keywordColor.code,

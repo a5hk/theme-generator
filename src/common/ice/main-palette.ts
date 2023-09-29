@@ -77,6 +77,7 @@ export class IcePalette extends Palette {
   constructor() {
     super();
     this.name = "Ice";
+    this.displayName = "Ice";
   }
 
   baseColor(): string {

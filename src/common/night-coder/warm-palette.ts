@@ -46,6 +46,7 @@ export class NightCoderWarmPalette extends NightCoderPalette {
   constructor() {
     super();
     this.variant = "Warm";
+    this.displayName = "Night Coder Flame";
   }
 
   baseColor(): string {

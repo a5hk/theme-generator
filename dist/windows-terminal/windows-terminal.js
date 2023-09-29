@@ -4,7 +4,7 @@ export function windowsTerminalColors(palette) {
         background: palette.background.code,
         cursorColor: palette.backgroundee.code,
         foreground: palette.backgroundc5.code,
-        name: palette.fullName(),
+        name: palette.displayName,
         selectionBackground: `${palette.backgroundee.code}`,
         black: palette.ansiBlack.code,
         blue: palette.ansiBlue.code,
@@ -29,7 +29,7 @@ export function windowsTerminalColorScheme(palettes, categories) {
     for (const cat of categories) {
         for (const p of palettes) {
             if (p.name.toLowerCase().replace(/ +/g, "-") === cat) {
-                themeWriter(`${cat}/windows-terminal/${p.filename()}.json`, windowsTerminalColors(p), "Windows Terminal color scheme generated.");
+                themeWriter(`${cat}/windows-terminal/${p.filenameBasedOnDisplayName()}.json`, windowsTerminalColors(p), "Windows Terminal color scheme generated.");
             }
         }
     }

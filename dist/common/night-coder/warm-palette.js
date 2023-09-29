@@ -37,6 +37,7 @@ export class NightCoderWarmPalette extends NightCoderPalette {
         this.jsonLevel10Color = new Color("#ff7566", "Level 10 JSON key");
         this.jsonLevel11Color = new Color("#f4b271", "Level > 10 JSON key");
         this.variant = "Warm";
+        this.displayName = "Night Coder Flame";
     }
     baseColor() {
         return "#0f1317";

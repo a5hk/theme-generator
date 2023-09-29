@@ -131,6 +131,7 @@ export class PaperPalette extends Palette {
         this.ansiYellow = new Color("#d9d326");
         this.name = "Paper";
         this.lightOrDark = "light";
+        this.displayName = "Paper";
     }
     baseColor() {
         return "#fcf8e8";

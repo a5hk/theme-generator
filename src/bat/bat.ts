@@ -13,7 +13,7 @@ export function tmTheme(palette: Palette): string {
     '<plist version="1.0">',
     "<dict>",
     "<key>name</key>",
-    `<string>${palette.fullName()}</string>`,
+    `<string>${palette.displayName}</string>`,
     "<key>settings</key>",
     "<array>",
     "<dict>",
@@ -69,7 +69,11 @@ export function batColorScheme(palettes: Palette[], categories: string[]): void 
   for (const cat of categories) {
     for (const p of palettes) {
       if (p.name.toLowerCase().replace(/ +/g, "-") === cat) {
-        themeWriter(`${cat}/bat/${p.filename()}.tmTheme`, tmTheme(p), "Main bat color scheme generated.");
+        themeWriter(
+          `${cat}/bat/${p.filenameBasedOnDisplayName()}.tmTheme`,
+          tmTheme(p),
+          "Main bat color scheme generated."
+        );
       }
     }
   }

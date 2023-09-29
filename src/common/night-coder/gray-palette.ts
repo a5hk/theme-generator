@@ -75,6 +75,7 @@ export class NightCoderGrayPalette extends NightCoderPalette {
   constructor() {
     super();
     this.variant = "Gray";
+    this.displayName = "Night Coder Smoke";
   }
 
   baseColor(): string {
