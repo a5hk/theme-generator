@@ -10,7 +10,7 @@ export function windowsTerminalColors(palette: Palette): string {
     background: palette.background.code,
     cursorColor: palette.backgroundee.code,
     foreground: palette.backgroundc5.code,
-    name: palette.displayName,
+    name: palette.fullName(),
     selectionBackground: `${palette.backgroundee.code}`,
 
     // eslint-disable-next-line sort-keys
@@ -42,7 +42,7 @@ export function windowsTerminalColorScheme(palettes: Palette[], categories: stri
     for (const p of palettes) {
       if (p.name.toLowerCase().replace(/ +/g, "-") === cat) {
         themeWriter(
-          `${cat}/windows-terminal/${p.filenameBasedOnDisplayName()}.json`,
+          `${cat}/windows-terminal/${p.filename()}.json`,
           windowsTerminalColors(p),
           "Windows Terminal color scheme generated."
         );

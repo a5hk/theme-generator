@@ -161,8 +161,7 @@ export class Palette {
         this.ansiWhite = new Color("#acaeb3");
         this.ansiYellow = new Color("#d9d326");
         this.name = "Night Coder";
-        this.displayName = "Night Coder Ember";
-        this.variant = "Main";
+        this.variant = "";
         this.lightOrDark = "dark";
         Object.defineProperty(this, "name", { enumerable: false });
         Object.defineProperty(this, "variant", { enumerable: false });
@@ -173,13 +172,10 @@ export class Palette {
         return "#030917";
     }
     fullName() {
-        return [this.name, this.variant].filter((s) => s !== "Main").join(" ");
+        return [this.name, this.variant].join(" ").trim();
     }
     filename() {
         return this.fullName().trim().toLowerCase().replace(/ +/g, "-");
-    }
-    filenameBasedOnDisplayName() {
-        return this.displayName.trim().toLowerCase().replace(/ +/g, "-");
     }
     toString() {
         return Object.entries(Object.values(this)

@@ -129,7 +129,7 @@ if has("termguicolors")
 endif
 
 set background=${palette.lightOrDark}
-let colors_name="${palette.displayName}"
+let colors_name="${palette.fullName()}"
 
 highlight clear CursorLine
 set cursorline
@@ -156,7 +156,7 @@ export function vimColorScheme(palettes, categories) {
     for (const cat of categories) {
         for (const p of palettes) {
             if (p.name.toLowerCase().replace(/ +/g, "-") === cat) {
-                themeWriter(`${cat}/vim/colors/${p.filenameBasedOnDisplayName()}.vim`, vimColoring(p), "Vim color scheme generated.");
+                themeWriter(`${cat}/vim/colors/${p.filename()}.vim`, vimColoring(p), "Vim color scheme generated.");
             }
         }
     }

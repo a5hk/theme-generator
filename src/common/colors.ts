@@ -178,8 +178,8 @@ export class Palette {
   // other properties
   name = "Night Coder";
   // added this for compatibility reasons, didn't want to change file names.
-  displayName = "Night Coder Ember";
-  variant = "Main";
+  // displayName = "Night Coder Ember";
+  variant = "";
   lightOrDark: "light" | "dark" = "dark";
 
   constructor() {
@@ -194,17 +194,17 @@ export class Palette {
   }
 
   fullName(): string {
-    return [this.name, this.variant].filter((s) => s !== "Main").join(" ");
+    return [this.name, this.variant].join(" ").trim();
   }
 
   filename(): string {
     return this.fullName().trim().toLowerCase().replace(/ +/g, "-");
   }
 
-  // FIXME
-  filenameBasedOnDisplayName(): string {
-    return this.displayName.trim().toLowerCase().replace(/ +/g, "-");
-  }
+  // // FIXME
+  // filenameBasedOnDisplayName(): string {
+  //   return this.fullName().trim().toLowerCase().replace(/ +/g, "-");
+  // }
 
   toString(): string {
     return Object.entries(

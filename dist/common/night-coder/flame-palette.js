@@ -1,5 +1,5 @@
 import { Color } from "../colors.js";
-import { NightCoderPalette } from "./main-palette.js";
+import { NightCoderPalette } from "./ember-palette.js";
 export class NightCoderWarmPalette extends NightCoderPalette {
     constructor() {
         super();

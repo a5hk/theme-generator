@@ -1,7 +1,7 @@
 import { Palette } from "./common/colors.js";
-import { NightCoderPalette } from "./common/night-coder/main-palette.js";
-import { NightCoderGrayPalette } from "./common/night-coder/gray-palette.js";
-import { NightCoderWarmPalette } from "./common/night-coder/warm-palette.js";
+import { NightCoderPalette } from "./common/night-coder/ember-palette.js";
+import { NightCoderGrayPalette } from "./common/night-coder/smoke-palette.js";
+import { NightCoderWarmPalette } from "./common/night-coder/flame-palette.js";
 import { IcePalette } from "./common/ice/main-palette.js";
 import { PaperPalette } from "./common/paper/main-palette.js";
 import { vscodeThemesWriter } from "./vscode/vscode.js";
