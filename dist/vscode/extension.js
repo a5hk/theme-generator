@@ -79,7 +79,7 @@ export class NightCoder extends Extension {
         this.name = "night-coder";
         this.displayName = "Night Coder";
         this.description = "The dark side of coding.";
-        this.version = "4.5.6";
+        this.version = "4.5.7";
         this.keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
         this.homepage = "https://github.com/a5hk/night-coder";
         this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
@@ -95,8 +95,6 @@ export class NightCoder extends Extension {
             "```",
         ].join("\n");
         return `# [Night Coder](https://marketplace.visualstudio.com/items?itemName=a5hk.night-coder)
-
-[![Preview in vscode.dev](https://img.shields.io/badge/preview%20in-vscode.dev-060?style=for-the-badge&labelColor=030917)]${this.previewURL("Night Coder")}
 
 A dark theme for Night Coders. There are three main variants:
 - **Night Coder Ember** A color scheme with a very dark blue background and variety of cold and warm colors.
