@@ -1,6 +1,7 @@
 import { NightCoderPalette } from "./common/night-coder/ember-palette.js";
 import { NightCoderGrayPalette } from "./common/night-coder/smoke-palette.js";
 import { NightCoderWarmPalette } from "./common/night-coder/flame-palette.js";
+import { NightCoderBlackPalette } from "./common/night-coder/black-palette.js";
 import { IcePalette } from "./common/ice/main-palette.js";
 import { PaperPalette } from "./common/paper/main-palette.js";
 import { vscodeThemesWriter } from "./vscode/vscode.js";
@@ -11,6 +12,7 @@ const palettes = [];
 palettes.push(new NightCoderPalette());
 palettes.push(new NightCoderWarmPalette());
 palettes.push(new NightCoderGrayPalette());
+palettes.push(new NightCoderBlackPalette());
 palettes.push(new IcePalette());
 palettes.push(new PaperPalette());
 const paletteCategories = [...new Set(palettes.map((p) => p.name.toLowerCase().replace(/ +/g, "-")))];
