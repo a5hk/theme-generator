@@ -14,21 +14,22 @@ export class NightCoderBlackPalette extends NightCoderPalette {
   contrastBackground = new Color("#050505");
 
   // token colors
-  functionDeclarationColor = /* ......... */ new Color("#9cc9b8", "Function declaration");
-  functionCallColor = /* ................ */ new Color("#cfc4a5", "Function call");
-  defaultLibraryClassTypeColor = /* ..... */ new Color("#8caad9", "Default library class/type");
-  namespaceClassStructColor = /* ........ */ new Color("#b6c9e7", "Namespace/Class/Struct");
-  keywordColor = /* ..................... */ new Color("#d2accd", "Keyword");
-  constantColor = /* .................... */ new Color("#f18983", "Constant");
-  importColor = /* ...................... */ new Color("#a6bc94", "Import/Require/Use");
-  stringColor = /* ...................... */ new Color("#a6bc94", "String");
-  propertyColor = /* .................... */ new Color("#dbb294", "Property");
-  literalConstantColor = /* ............. */ new Color("#c0a8f0", "Literal constant");
-  typeColor = /* ........................ */ new Color("#b6c9e7", "Type");
-  defaultLibraryFunctionColor = /* ...... */ new Color("#f7d6a1", "Default library function");
   annotationColor = /* .................. */ new Color("#d5bc95", "Annotation");
+  comparisonLogicalOperatorColor = /* ... */ new Color("#bef4d4", "Comparison/Logical operator");
+  constantColor = /* .................... */ new Color("#f18983", "Constant");
+  defaultLibraryClassTypeColor = /* ..... */ new Color("#8caad9", "Default library class/type");
+  defaultLibraryFunctionColor = /* ...... */ new Color("#f7d6a1", "Default library function");
+  functionCallColor = /* ................ */ new Color("#cfc4a5", "Function call");
+  functionDeclarationColor = /* ......... */ new Color("#9cc9b8", "Function declaration");
+  importColor = /* ...................... */ new Color("#a6bc94", "Import/Require/Use");
+  keywordColor = /* ..................... */ new Color("#d2accd", "Keyword");
+  literalConstantColor = /* ............. */ new Color("#c0a8f0", "Literal constant");
   miscellaneousColor = /* ............... */ new Color("#d5bc95", "Miscellaneous");
+  namespaceClassStructColor = /* ........ */ new Color("#b6c9e7", "Namespace/Class/Struct");
   parameterArgumentColor = /* ........... */ new Color(mix("d5", this.baseColor()), "Parameter, Argument");
+  propertyColor = /* .................... */ new Color("#dbb294", "Property");
+  stringColor = /* ...................... */ new Color("#a6bc94", "String");
+  typeColor = /* ........................ */ new Color("#b6c9e7", "Type");
 
   // markup
   linkTagColor = /* ........... */ new Color("#9cc9b8", "HTML link tag");
@@ -41,6 +42,7 @@ export class NightCoderBlackPalette extends NightCoderPalette {
   tagColor = /* ............... */ new Color("#dbb294", "Tag");
   customTagColor = /* ......... */ new Color("#c0a8f0", "HTML custom tag");
   inlineTagColor = /* ......... */ new Color("#f7d6a1", "HTML inline tag");
+  italicColor = /* ............ */ new Color("#bef4d4", "Italic");
 
   // json
   jsonLevel01Color = new Color("#dbb294", "Level 1 JSON key");
@@ -56,6 +58,7 @@ export class NightCoderBlackPalette extends NightCoderPalette {
 
   // bracket pairs
   bracketPair2 = new Color("#d2accd");
+  bracketPair3 = new Color("#bef4d4");
   bracketPair4 = new Color("#d5bc95");
   bracketPair5 = new Color("#f7d6a1");
   bracketPair6 = new Color("#8caad9");
