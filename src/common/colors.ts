@@ -164,10 +164,10 @@ export class Palette {
   ansiBrightMagenta = /* ... */ new Color("#f28ca6");
   ansiBrightRed = /* ....... */ new Color("#f18a7e");
   ansiBrightWhite = /* ..... */ new Color("#c5c6c9"); // backgroundc5
+  ansiBrightYellow = /* .... */ new Color("#f5d780");
   // eslint-disable-next-line sort-keys
   ansiBlack = /* ........... */ new Color("#353a45"); // background33
   ansiBlue = /* ............ */ new Color("#829dc9");
-  ansiBrightYellow = /* .... */ new Color("#f5d780");
   ansiCyan = /* ............ */ new Color("#0fc6d7");
   ansiGreen = /* ........... */ new Color("#85c3ab");
   ansiMagenta = /* ......... */ new Color("#c982c1");

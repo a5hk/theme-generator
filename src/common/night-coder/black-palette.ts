@@ -68,10 +68,28 @@ export class NightCoderBlackPalette extends NightCoderPalette {
   bracketPair6 = new Color("#8caad9");
 
   // terminal colors
-  ansiGreen = /* ........... */ new Color("#9cc9b8");
-  ansiBlue = /* ............ */ new Color("#b6c9e7");
-  ansiMagenta = /* ......... */ new Color("#d2accd");
-  ansiYellow = /* .......... */ new Color("#dbd994");
+  ansiBrightBlack = /* ..... */ new Color("#b0b0b0");
+  ansiBrightBlue = /* ...... */ new Color("#ccccff");
+  ansiBrightCyan = /* ...... */ new Color("#00ffff");
+  ansiBrightGreen = /* ..... */ new Color("#00d100");
+  ansiBrightMagenta = /* ... */ new Color("#ffccff");
+  ansiBrightRed = /* ....... */ new Color("#ff9999");
+  ansiBrightWhite = /* ..... */ new Color("#e6e6e6");
+  ansiBrightYellow = /* .... */ new Color("#e5e600");
+
+  ansiBlack = /* ........... */ new Color("#969696");
+  ansiBlue = /* ............ */ new Color("#9999ff");
+  ansiCyan = /* ............ */ new Color("#00cccc");
+  ansiGreen = /* ........... */ new Color("#00b300");
+  ansiMagenta = /* ......... */ new Color("#ff80ff");
+  ansiRed = /* ............. */ new Color("#ff6666");
+  ansiWhite = /* ........... */ new Color("#cccccc");
+  ansiYellow = /* .......... */ new Color("#b2b300");
+
+  // ansiBlue = /* ............ */ new Color("#b6c9e7");
+  // ansiGreen = /* ........... */ new Color("#9cc9b8");
+  // ansiMagenta = /* ......... */ new Color("#d2accd");
+  // ansiYellow = /* .......... */ new Color("#dbd994");
 
   // workbench colors
   editorLightBulbAutoFixForeground = /* .................... */ new Color("#f2f28c");

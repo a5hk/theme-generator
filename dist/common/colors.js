@@ -151,9 +151,9 @@ export class Palette {
         this.ansiBrightMagenta = new Color("#f28ca6");
         this.ansiBrightRed = new Color("#f18a7e");
         this.ansiBrightWhite = new Color("#c5c6c9");
+        this.ansiBrightYellow = new Color("#f5d780");
         this.ansiBlack = new Color("#353a45");
         this.ansiBlue = new Color("#829dc9");
-        this.ansiBrightYellow = new Color("#f5d780");
         this.ansiCyan = new Color("#0fc6d7");
         this.ansiGreen = new Color("#85c3ab");
         this.ansiMagenta = new Color("#c982c1");
