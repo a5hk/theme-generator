@@ -1,7 +1,7 @@
 import { Color } from "../colors.js";
-import { NightCoderPalette } from "./ember-palette.js";
+import { NightCoderEmberPalette } from "./ember-palette.js";
 
-export class NightCoderWarmPalette extends NightCoderPalette {
+export class NightCoderFlamePalette extends NightCoderEmberPalette {
   contrastBackground = new Color("#0a0d0f");
 
   // token colors

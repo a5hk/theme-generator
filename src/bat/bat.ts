@@ -34,7 +34,7 @@ export function tmTheme(palette: Palette): string {
   ].join("\n");
 
   const theme = textmateRule
-    .getRules(false)
+    .getRules()
     .map((r) => {
       return [
         "<dict>",

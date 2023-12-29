@@ -1,7 +1,7 @@
 import { Color } from "../colors.js";
-import { NightCoderPalette } from "./ember-palette.js";
+import { NightCoderEmberPalette } from "./ember-palette.js";
 
-export class NightCoderGrayPalette extends NightCoderPalette {
+export class NightCoderAshPalette extends NightCoderEmberPalette {
   contrastBackground = new Color("#262626");
 
   // token colors
@@ -74,7 +74,7 @@ export class NightCoderGrayPalette extends NightCoderPalette {
 
   constructor() {
     super();
-    this.variant = "Smoke";
+    this.variant = "Ash";
   }
 
   baseColor(): string {

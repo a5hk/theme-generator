@@ -1,6 +1,6 @@
 import chroma from "chroma-js";
 import { Color } from "../colors.js";
-import { NightCoderPalette } from "./ember-palette.js";
+import { NightCoderEmberPalette } from "./ember-palette.js";
 
 function hexAlphaToDec(alpha: string): number {
   return parseInt(alpha, 16) / 255;
@@ -10,7 +10,7 @@ function mix(alpha: string, background: string): string {
   return chroma.mix(background, "#ffffff", hexAlphaToDec(alpha), "rgb").toString();
 }
 
-export class NightCoderBlackPalette extends NightCoderPalette {
+export class NightCoderCharcoalPalette extends NightCoderEmberPalette {
   contrastBackground = new Color("#050505");
 
   // token colors
@@ -86,11 +86,6 @@ export class NightCoderBlackPalette extends NightCoderPalette {
   ansiWhite = /* ........... */ new Color("#cccccc");
   ansiYellow = /* .......... */ new Color("#b2b300");
 
-  // ansiBlue = /* ............ */ new Color("#b6c9e7");
-  // ansiGreen = /* ........... */ new Color("#9cc9b8");
-  // ansiMagenta = /* ......... */ new Color("#d2accd");
-  // ansiYellow = /* .......... */ new Color("#dbd994");
-
   // workbench colors
   editorLightBulbAutoFixForeground = /* .................... */ new Color("#f2f28c");
   editorLightBulbForeground = /* ........................... */ new Color("#f18983");
@@ -101,7 +96,7 @@ export class NightCoderBlackPalette extends NightCoderPalette {
 
   constructor() {
     super();
-    this.variant = "Black";
+    this.variant = "Charcoal";
   }
 
   baseColor(): string {

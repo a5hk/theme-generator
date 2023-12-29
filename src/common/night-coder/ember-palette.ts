@@ -1,6 +1,6 @@
 import { Palette } from "../colors.js";
 
-export class NightCoderPalette extends Palette {
+export class NightCoderEmberPalette extends Palette {
   constructor() {
     super();
     this.variant = "Ember";

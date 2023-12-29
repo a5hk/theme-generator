@@ -14,7 +14,6 @@ export class VSTheme {
         return [
             this.palette.fullName(),
             this.options.contrast ? "Contrast" : "",
-            this.options.italic ? "Italic" : "",
         ]
             .join(" ")
             .replace(/ +/g, " ")
@@ -38,21 +37,13 @@ export class VSTheme {
     generateTheme() {
         const textmateTheme = new TextmateTheme(this.palette);
         const semanticTheme = new SemanticTheme(this.palette);
-        return this.__italicReject({
+        return JSON.stringify({
             $schema: "vscode://schemas/color-theme",
             colors: this.workbenchColors,
             name: this.label,
             semanticHighlighting: true,
-            semanticTokenColors: semanticTheme.getRules(this.options.italic),
-            tokenColors: textmateTheme.getRules(this.options.italic),
-        });
-    }
-    __italicReject(theme) {
-        return JSON.stringify(theme, (k, v) => {
-            if (k === "__italic") {
-                return undefined;
-            }
-            return v;
+            semanticTokenColors: semanticTheme.getRules(),
+            tokenColors: textmateTheme.getRules(),
         });
     }
 }

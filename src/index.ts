@@ -1,8 +1,8 @@
 import { Palette } from "./common/colors.js";
-import { NightCoderPalette } from "./common/night-coder/ember-palette.js";
-import { NightCoderGrayPalette } from "./common/night-coder/smoke-palette.js";
-import { NightCoderWarmPalette } from "./common/night-coder/flame-palette.js";
-import { NightCoderBlackPalette } from "./common/night-coder/black-palette.js";
+import { NightCoderEmberPalette } from "./common/night-coder/ember-palette.js";
+import { NightCoderAshPalette } from "./common/night-coder/ash-palette.js";
+import { NightCoderFlamePalette } from "./common/night-coder/flame-palette.js";
+import { NightCoderCharcoalPalette } from "./common/night-coder/charcoal-palette.js";
 import { IcePalette } from "./common/ice/main-palette.js";
 import { PaperPalette } from "./common/paper/main-palette.js";
 import { vscodeThemesWriter } from "./vscode/vscode.js";
@@ -11,10 +11,10 @@ import { batColorScheme } from "./bat/bat.js";
 import { windowsTerminalColorScheme } from "./windows-terminal/windows-terminal.js";
 
 const palettes: Palette[] = [];
-palettes.push(new NightCoderPalette());
-palettes.push(new NightCoderWarmPalette());
-palettes.push(new NightCoderGrayPalette());
-palettes.push(new NightCoderBlackPalette());
+palettes.push(new NightCoderEmberPalette());
+palettes.push(new NightCoderFlamePalette());
+palettes.push(new NightCoderAshPalette());
+palettes.push(new NightCoderCharcoalPalette());
 palettes.push(new IcePalette());
 palettes.push(new PaperPalette());
 const paletteCategories = [...new Set(palettes.map((p) => p.name.toLowerCase().replace(/ +/g, "-")))];

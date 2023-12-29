@@ -6,7 +6,6 @@ export interface textmateRule {
   settings: {
     foreground?: string;
     fontStyle?: string;
-    __italic?: boolean;
   };
 }
 
@@ -17,16 +16,7 @@ export class TextmateTheme {
     this.palette = palette;
   }
 
-  #italic(theme: textmateRule[]): textmateRule[] {
-    return theme.map((r) => {
-      if (r.settings.__italic) {
-        r.settings.fontStyle = "italic";
-      }
-      return r;
-    });
-  }
-
-  getRules(italic: boolean): textmateRule[] {
+  getRules(): textmateRule[] {
     const rules: textmateRule[] = [
       {
         name: "variable",
@@ -72,7 +62,6 @@ export class TextmateTheme {
           "variable.other.readwrite.module",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.constantColor.code,
         },
       },
@@ -92,7 +81,6 @@ export class TextmateTheme {
           "support.other.namespace",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.defaultLibraryClassTypeColor.code,
         },
       },
@@ -100,7 +88,6 @@ export class TextmateTheme {
         name: "default library functions and methods",
         scope: ["meta.method.declaration.js storage.type.js", "support.function"],
         settings: {
-          __italic: true,
           foreground: this.palette.defaultLibraryFunctionColor.code,
         },
       },
@@ -129,7 +116,6 @@ export class TextmateTheme {
           "support.type.property-name",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.propertyColor.code,
         },
       },
@@ -137,7 +123,6 @@ export class TextmateTheme {
         name: "parameter",
         scope: ["meta.function-call.arguments", "variable.parameter"],
         settings: {
-          __italic: true,
           foreground: this.palette.parameterArgumentColor.code,
         },
       },
@@ -159,7 +144,6 @@ export class TextmateTheme {
           "meta.function.call entity.name.function",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.functionCallColor.code,
         },
       },
@@ -198,7 +182,6 @@ export class TextmateTheme {
           "entity.other.inherited-class",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.namespaceClassStructColor.code,
         },
       },
@@ -258,7 +241,6 @@ export class TextmateTheme {
           "punctuation.definition.interpolation",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.constantColor.code,
         },
       },
@@ -313,7 +295,6 @@ export class TextmateTheme {
         name: "l1 json",
         scope: ["support.type.property-name.json"],
         settings: {
-          __italic: true,
           foreground: this.palette.jsonLevel01Color.code,
         },
       },
@@ -321,7 +302,6 @@ export class TextmateTheme {
         name: "l2 json",
         scope: ["meta.structure.dictionary.value support.type.property-name.json"],
         settings: {
-          __italic: true,
           foreground: this.palette.jsonLevel02Color.code,
         },
       },
@@ -329,7 +309,6 @@ export class TextmateTheme {
         name: "l3 json",
         scope: ["meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json"],
         settings: {
-          __italic: true,
           foreground: this.palette.jsonLevel03Color.code,
         },
       },
@@ -339,7 +318,6 @@ export class TextmateTheme {
           "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.jsonLevel04Color.code,
         },
       },
@@ -349,7 +327,6 @@ export class TextmateTheme {
           "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.jsonLevel05Color.code,
         },
       },
@@ -359,7 +336,6 @@ export class TextmateTheme {
           "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.jsonLevel06Color.code,
         },
       },
@@ -369,7 +345,6 @@ export class TextmateTheme {
           "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.jsonLevel07Color.code,
         },
       },
@@ -379,7 +354,6 @@ export class TextmateTheme {
           "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.jsonLevel08Color.code,
         },
       },
@@ -389,7 +363,6 @@ export class TextmateTheme {
           "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.jsonLevel09Color.code,
         },
       },
@@ -399,7 +372,6 @@ export class TextmateTheme {
           "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.jsonLevel10Color.code,
         },
       },
@@ -409,7 +381,6 @@ export class TextmateTheme {
           "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
         ],
         settings: {
-          __italic: true,
           foreground: this.palette.jsonLevel11Color.code,
         },
       },
@@ -489,7 +460,6 @@ export class TextmateTheme {
       {
         scope: ["entity.other.attribute-name", "meta.selector.css", "source.css.scss entity.name.tag.css"],
         settings: {
-          __italic: true,
           foreground: this.palette.attributeNameColor.code,
         },
       },
@@ -528,9 +498,6 @@ export class TextmateTheme {
       },
     ];
 
-    if (italic) {
-      return this.#italic(rules);
-    }
     return rules;
   }
 }

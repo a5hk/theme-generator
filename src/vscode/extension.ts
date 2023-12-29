@@ -40,15 +40,12 @@ export class Extension {
 
   createThemes(palettes: Palette[]) {
     for (const p of palettes) {
-      for (const style of [false, true]) {
-        for (const contrast of [false, true]) {
-          const t = new VSTheme(p, {
-            contrast: contrast,
-            italic: style,
-            uiTheme: p.lightOrDark == "dark" ? "vs-dark" : "vs",
-          });
-          this.addTheme(t);
-        }
+      for (const contrast of [false, true]) {
+        const t = new VSTheme(p, {
+          contrast: contrast,
+          uiTheme: p.lightOrDark == "dark" ? "vs-dark" : "vs",
+        });
+        this.addTheme(t);
       }
     }
   }
@@ -106,8 +103,8 @@ export class NightCoder extends Extension {
     this.name = "night-coder";
     this.displayName = "Night Coder";
     this.description = "The dark side of coding.";
-    this.version = "4.5.7";
-    this.keywords = ["NightCoder", "Night Coder", "Dark", "Borderless", "Italic", "Contrast", "Warm"];
+    this.version = "5.0.0";
+    this.keywords = ["NightCoder", "Night Coder", "Dark"];
     this.homepage = "https://github.com/a5hk/night-coder";
     this.repository = { type: "git", url: "https://github.com/a5hk/night-coder" };
 
@@ -128,8 +125,9 @@ export class NightCoder extends Extension {
 
 A dark theme for Night Coders. There are three main variants:
 - **Night Coder Ember** A color scheme with a very dark blue background and variety of cold and warm colors.
-- **Night Coder Smoke** For those who prefer a little lighter background.
+- **Night Coder Ash** For those who prefer a little lighter background.
 - **Night Coder Flame** A color scheme that evokes the intensity and warmth of fire, with shades of red, orange, and yellow that create a vibrant and energetic mood, inspired by [Mayukai Sunset](https://marketplace.visualstudio.com/items?itemName=GulajavaMinistudio.mayukaithemevsc)
+- **Night Coder Charcoal** A black canvas for your coding masterpiece.
 
 Each of these main variants, has contrast and italic versions. Built using [Theme Generator](https://github.com/a5hk/theme-generator)
 
@@ -151,7 +149,7 @@ Each of these main variants, has contrast and italic versions. Built using [Them
 
 ![python](/screenshot/nw-python.png)
 
-### JSON [(Night Coder Smoke Contrast Italic)]${this.previewURL("Night Coder Smoke Contrast Italic")}
+### JSON [(Night Coder Ash Contrast Italic)]${this.previewURL("Night Coder Smoke Contrast Italic")}
 
 ![json](/screenshot/ngci-json.png)
 
@@ -173,8 +171,8 @@ export class Ice extends Extension {
     this.name = "ice";
     this.displayName = "Ice";
     this.description = "Cold as Ice";
-    this.version = "1.2.0";
-    this.keywords = ["Ice", "Cold", "Dark", "Borderless", "Italic", "Contrast"];
+    this.version = "2.0.0";
+    this.keywords = ["Ice", "Cold", "Dark"];
     this.homepage = "https://github.com/a5hk/ice";
     this.repository = { type: "git", url: "https://github.com/a5hk/ice" };
     this.galleryBanner.color = "#012841";
@@ -209,8 +207,8 @@ export class Paper extends Extension {
     this.name = "paper";
     this.displayName = "Paper";
     this.description = "Light theme with good contrast";
-    this.version = "1.2.0";
-    this.keywords = ["Paper", "Light", "Borderless", "Italic", "Contrast"];
+    this.version = "2.0.0";
+    this.keywords = ["Paper", "Light"];
     this.homepage = "https://github.com/a5hk/paper";
     this.repository = { type: "git", url: "https://github.com/a5hk/paper" };
     this.galleryBanner.color = "#eff1f3";
