@@ -16,7 +16,7 @@ export class NightCoderBlackPalette extends NightCoderPalette {
         this.constantColor = new Color("#f18983", "Constant");
         this.defaultLibraryClassTypeColor = new Color("#8caad9", "Default library class/type");
         this.defaultLibraryFunctionColor = new Color("#f7d6a1", "Default library function");
-        this.functionCallColor = new Color("#cfc4a5", "Function call");
+        this.functionCallColor = new Color("#c9be9c", "Function call");
         this.functionDeclarationColor = new Color("#9cc9b8", "Function declaration");
         this.importColor = new Color("#a6bc94", "Import/Require/Use");
         this.keywordColor = new Color("#d2accd", "Keyword");
@@ -28,9 +28,9 @@ export class NightCoderBlackPalette extends NightCoderPalette {
         this.propertyColor = new Color("#dbb294", "Property");
         this.stringColor = new Color("#a6bc94", "String");
         this.typeColor = new Color("#b6c9e7", "Type");
-        this.attributeNameColor = new Color("#cfc4a5", "Attribute name");
+        this.attributeNameColor = new Color("#c9be9c", "Attribute name");
         this.customTagColor = new Color("#c0a8f0", "HTML custom tag");
-        this.headingColor = new Color("#cfc4a5", "Heading");
+        this.headingColor = new Color("#c9be9c", "Heading");
         this.inlineTagColor = new Color("#f7d6a1", "HTML inline tag");
         this.italicColor = new Color("#bef4d4", "Italic");
         this.linkTagColor = new Color("#9cc9b8", "HTML link tag");
@@ -44,7 +44,7 @@ export class NightCoderBlackPalette extends NightCoderPalette {
         this.jsonLevel02Color = new Color("#d2accd", "Level 2 JSON key");
         this.jsonLevel03Color = new Color("#f18983", "Level 3 JSON key");
         this.jsonLevel04Color = new Color("#8caad9", "Level 4 JSON key");
-        this.jsonLevel05Color = new Color("#cfc4a5", "Level 5 JSON key");
+        this.jsonLevel05Color = new Color("#c9be9c", "Level 5 JSON key");
         this.jsonLevel06Color = new Color("#9cc9b8", "Level 6 JSON key");
         this.jsonLevel07Color = new Color("#dbd994", "Level 7 JSON key");
         this.jsonLevel08Color = new Color("#dbb294", "Level > 7 JSON key");
@@ -54,7 +54,7 @@ export class NightCoderBlackPalette extends NightCoderPalette {
         this.bracketPair1 = new Color("#ffffcc");
         this.bracketPair2 = new Color("#d2accd");
         this.bracketPair3 = new Color("#bef4d4");
-        this.bracketPair4 = new Color("#d5bc95");
+        this.bracketPair4 = new Color("#ff80ff");
         this.bracketPair5 = new Color("#f7d6a1");
         this.bracketPair6 = new Color("#8caad9");
         this.ansiBrightBlack = new Color("#b0b0b0");

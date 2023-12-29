@@ -19,7 +19,7 @@ export class NightCoderBlackPalette extends NightCoderPalette {
   constantColor = /* .................... */ new Color("#f18983", "Constant");
   defaultLibraryClassTypeColor = /* ..... */ new Color("#8caad9", "Default library class/type");
   defaultLibraryFunctionColor = /* ...... */ new Color("#f7d6a1", "Default library function");
-  functionCallColor = /* ................ */ new Color("#cfc4a5", "Function call");
+  functionCallColor = /* ................ */ new Color("#c9be9c", "Function call");
   functionDeclarationColor = /* ......... */ new Color("#9cc9b8", "Function declaration");
   importColor = /* ...................... */ new Color("#a6bc94", "Import/Require/Use");
   keywordColor = /* ..................... */ new Color("#d2accd", "Keyword");
@@ -33,9 +33,9 @@ export class NightCoderBlackPalette extends NightCoderPalette {
   typeColor = /* ........................ */ new Color("#b6c9e7", "Type");
 
   // markup
-  attributeNameColor = /* ..... */ new Color("#cfc4a5", "Attribute name");
+  attributeNameColor = /* ..... */ new Color("#c9be9c", "Attribute name");
   customTagColor = /* ......... */ new Color("#c0a8f0", "HTML custom tag");
-  headingColor = /* ........... */ new Color("#cfc4a5", "Heading");
+  headingColor = /* ........... */ new Color("#c9be9c", "Heading");
   inlineTagColor = /* ......... */ new Color("#f7d6a1", "HTML inline tag");
   italicColor = /* ............ */ new Color("#bef4d4", "Italic");
   linkTagColor = /* ........... */ new Color("#9cc9b8", "HTML link tag");
@@ -51,7 +51,7 @@ export class NightCoderBlackPalette extends NightCoderPalette {
   jsonLevel02Color = new Color("#d2accd", "Level 2 JSON key");
   jsonLevel03Color = new Color("#f18983", "Level 3 JSON key");
   jsonLevel04Color = new Color("#8caad9", "Level 4 JSON key");
-  jsonLevel05Color = new Color("#cfc4a5", "Level 5 JSON key");
+  jsonLevel05Color = new Color("#c9be9c", "Level 5 JSON key");
   jsonLevel06Color = new Color("#9cc9b8", "Level 6 JSON key");
   jsonLevel07Color = new Color("#dbd994", "Level 7 JSON key");
   jsonLevel08Color = new Color("#dbb294", "Level > 7 JSON key");
@@ -63,7 +63,7 @@ export class NightCoderBlackPalette extends NightCoderPalette {
   bracketPair1 = new Color("#ffffcc");
   bracketPair2 = new Color("#d2accd");
   bracketPair3 = new Color("#bef4d4");
-  bracketPair4 = new Color("#d5bc95");
+  bracketPair4 = new Color("#ff80ff");
   bracketPair5 = new Color("#f7d6a1");
   bracketPair6 = new Color("#8caad9");
 
