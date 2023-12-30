@@ -1,14 +1,5 @@
-import chroma from "chroma-js";
-import { Color } from "../colors.js";
+import { Color, mix } from "../colors.js";
 import { NightCoderEmberPalette } from "./ember-palette.js";
-
-function hexAlphaToDec(alpha: string): number {
-  return parseInt(alpha, 16) / 255;
-}
-
-function mix(alpha: string, background: string): string {
-  return chroma.mix(background, "#ffffff", hexAlphaToDec(alpha), "rgb").toString();
-}
 
 export class NightCoderCharcoalPalette extends NightCoderEmberPalette {
   contrastBackground = new Color("#050505");

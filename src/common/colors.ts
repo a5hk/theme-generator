@@ -25,7 +25,7 @@ function hexAlphaToDec(alpha: string): number {
   return parseInt(alpha, 16) / 255;
 }
 
-function mix(alpha: string, background: string): string {
+export function mix(alpha: string, background: string): string {
   return chroma.mix(background, "#ffffff", hexAlphaToDec(alpha), "rgb").toString();
 }
 
@@ -177,8 +177,6 @@ export class Palette {
 
   // other properties
   name = "Night Coder";
-  // added this for compatibility reasons, didn't want to change file names.
-  // displayName = "Night Coder Ember";
   variant = "";
   lightOrDark: "light" | "dark" = "dark";
 
@@ -200,11 +198,6 @@ export class Palette {
   filename(): string {
     return this.fullName().trim().toLowerCase().replace(/ +/g, "-");
   }
-
-  // // FIXME
-  // filenameBasedOnDisplayName(): string {
-  //   return this.fullName().trim().toLowerCase().replace(/ +/g, "-");
-  // }
 
   toString(): string {
     return Object.entries(

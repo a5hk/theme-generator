@@ -129,7 +129,7 @@ A dark theme for Night Coders. There are three main variants:
 - **Night Coder Flame** A color scheme that evokes the intensity and warmth of fire, with shades of red, orange, and yellow that create a vibrant and energetic mood, inspired by [Mayukai Sunset](https://marketplace.visualstudio.com/items?itemName=GulajavaMinistudio.mayukaithemevsc)
 - **Night Coder Charcoal** A black canvas for your coding masterpiece.
 
-Each of these main variants, has contrast and italic versions. Built using [Theme Generator](https://github.com/a5hk/theme-generator)
+Each of these main variants, has a contrast version. Built using [Theme Generator](https://github.com/a5hk/theme-generator)
 
 ![html](/screenshot/demo.gif)
 
@@ -149,7 +149,7 @@ Each of these main variants, has contrast and italic versions. Built using [Them
 
 ![python](/screenshot/nw-python.png)
 
-### JSON [(Night Coder Ash Contrast Italic)]${this.previewURL("Night Coder Smoke Contrast Italic")}
+### JSON [(Night Coder Ash Contrast)]${this.previewURL("Night Coder Ash Contrast")}
 
 ![json](/screenshot/ngci-json.png)
 

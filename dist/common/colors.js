@@ -31,7 +31,7 @@ _Color_code = new WeakMap();
 function hexAlphaToDec(alpha) {
     return parseInt(alpha, 16) / 255;
 }
-function mix(alpha, background) {
+export function mix(alpha, background) {
     return chroma.mix(background, "#ffffff", hexAlphaToDec(alpha), "rgb").toString();
 }
 export class Palette {
