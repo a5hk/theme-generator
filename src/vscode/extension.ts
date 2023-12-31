@@ -112,15 +112,6 @@ export class NightCoder extends Extension {
   }
 
   generateReadme(): string {
-    const codeBlock = [
-      "```json",
-      `"editor.fontFamily": "'JetBrains Mono', 'Cascadia Code', 'Fira Code', Consolas, 'Courier New', monospace",`,
-      `"editor.fontSize": 14,`,
-      `"editor.fontLigatures": true,`,
-      `"editor.bracketPairColorization.enabled": true,`,
-      "```",
-    ].join("\n");
-
     return `# [Night Coder](https://marketplace.visualstudio.com/items?itemName=a5hk.night-coder)
 
 A dark theme for Night Coders. There are three main variants:
@@ -151,11 +142,11 @@ Each of these main variants, has a contrast version. Built using [Theme Generato
 
 ### JSON [(Night Coder Ash Contrast)]${this.previewURL("Night Coder Ash Contrast")}
 
-![json](/screenshot/ngci-json.png)
+![json](/screenshot/vscode-ash-contrast-json.png)
 
-## Preferences shown in the screenshots
+### JSON [(Night Coder Charcoal)]${this.previewURL("Night Coder Ash Charcoal")}
 
-${codeBlock}
+![json](/screenshot/vscode-charcoal-ruby.png)
 
 ## License
 

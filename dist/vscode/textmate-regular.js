@@ -173,7 +173,7 @@ export class TextmateTheme {
             },
             {
                 name: "logical and comparison operators",
-                scope: ["keyword.operator.comparison", "keyword.operator.logical"],
+                scope: ["keyword.operator.comparison", "keyword.operator.logical, keyword.operator.relational"],
                 settings: {
                     foreground: this.palette.comparisonLogicalOperatorColor.code,
                 },
