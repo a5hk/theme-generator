@@ -29,7 +29,7 @@ export function tmTheme(palette) {
         "</dict>",
     ].join("\n");
     const theme = textmateRule
-        .getRules(false)
+        .getRules()
         .map((r) => {
         var _a;
         return [

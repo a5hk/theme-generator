@@ -25,7 +25,7 @@ function hexAlphaToDec(alpha: string): number {
   return parseInt(alpha, 16) / 255;
 }
 
-function mix(alpha: string, background: string): string {
+export function mix(alpha: string, background: string): string {
   return chroma.mix(background, "#ffffff", hexAlphaToDec(alpha), "rgb").toString();
 }
 
@@ -164,10 +164,10 @@ export class Palette {
   ansiBrightMagenta = /* ... */ new Color("#f28ca6");
   ansiBrightRed = /* ....... */ new Color("#f18a7e");
   ansiBrightWhite = /* ..... */ new Color("#c5c6c9"); // backgroundc5
+  ansiBrightYellow = /* .... */ new Color("#f5d780");
   // eslint-disable-next-line sort-keys
   ansiBlack = /* ........... */ new Color("#353a45"); // background33
   ansiBlue = /* ............ */ new Color("#829dc9");
-  ansiBrightYellow = /* .... */ new Color("#f5d780");
   ansiCyan = /* ............ */ new Color("#0fc6d7");
   ansiGreen = /* ........... */ new Color("#85c3ab");
   ansiMagenta = /* ......... */ new Color("#c982c1");
@@ -177,8 +177,6 @@ export class Palette {
 
   // other properties
   name = "Night Coder";
-  // added this for compatibility reasons, didn't want to change file names.
-  // displayName = "Night Coder Ember";
   variant = "";
   lightOrDark: "light" | "dark" = "dark";
 
@@ -200,11 +198,6 @@ export class Palette {
   filename(): string {
     return this.fullName().trim().toLowerCase().replace(/ +/g, "-");
   }
-
-  // // FIXME
-  // filenameBasedOnDisplayName(): string {
-  //   return this.fullName().trim().toLowerCase().replace(/ +/g, "-");
-  // }
 
   toString(): string {
     return Object.entries(

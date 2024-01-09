@@ -1,15 +1,8 @@
-var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-};
-var _TextmateTheme_instances, _TextmateTheme_italic;
 export class TextmateTheme {
     constructor(palette) {
-        _TextmateTheme_instances.add(this);
         this.palette = palette;
     }
-    getRules(italic) {
+    getRules() {
         const rules = [
             {
                 name: "variable",
@@ -55,7 +48,6 @@ export class TextmateTheme {
                     "variable.other.readwrite.module",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.constantColor.code,
                 },
             },
@@ -75,7 +67,6 @@ export class TextmateTheme {
                     "support.other.namespace",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.defaultLibraryClassTypeColor.code,
                 },
             },
@@ -83,7 +74,6 @@ export class TextmateTheme {
                 name: "default library functions and methods",
                 scope: ["meta.method.declaration.js storage.type.js", "support.function"],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.defaultLibraryFunctionColor.code,
                 },
             },
@@ -112,7 +102,6 @@ export class TextmateTheme {
                     "support.type.property-name",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.propertyColor.code,
                 },
             },
@@ -120,7 +109,6 @@ export class TextmateTheme {
                 name: "parameter",
                 scope: ["meta.function-call.arguments", "variable.parameter"],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.parameterArgumentColor.code,
                 },
             },
@@ -142,7 +130,6 @@ export class TextmateTheme {
                     "meta.function.call entity.name.function",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.functionCallColor.code,
                 },
             },
@@ -181,13 +168,12 @@ export class TextmateTheme {
                     "entity.other.inherited-class",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.namespaceClassStructColor.code,
                 },
             },
             {
                 name: "logical and comparison operators",
-                scope: ["keyword.operator.comparison", "keyword.operator.logical"],
+                scope: ["keyword.operator.comparison", "keyword.operator.logical, keyword.operator.relational"],
                 settings: {
                     foreground: this.palette.comparisonLogicalOperatorColor.code,
                 },
@@ -241,7 +227,6 @@ export class TextmateTheme {
                     "punctuation.definition.interpolation",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.constantColor.code,
                 },
             },
@@ -294,7 +279,6 @@ export class TextmateTheme {
                 name: "l1 json",
                 scope: ["support.type.property-name.json"],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.jsonLevel01Color.code,
                 },
             },
@@ -302,7 +286,6 @@ export class TextmateTheme {
                 name: "l2 json",
                 scope: ["meta.structure.dictionary.value support.type.property-name.json"],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.jsonLevel02Color.code,
                 },
             },
@@ -310,7 +293,6 @@ export class TextmateTheme {
                 name: "l3 json",
                 scope: ["meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json"],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.jsonLevel03Color.code,
                 },
             },
@@ -320,7 +302,6 @@ export class TextmateTheme {
                     "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.jsonLevel04Color.code,
                 },
             },
@@ -330,7 +311,6 @@ export class TextmateTheme {
                     "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.jsonLevel05Color.code,
                 },
             },
@@ -340,7 +320,6 @@ export class TextmateTheme {
                     "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.jsonLevel06Color.code,
                 },
             },
@@ -350,7 +329,6 @@ export class TextmateTheme {
                     "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.jsonLevel07Color.code,
                 },
             },
@@ -360,7 +338,6 @@ export class TextmateTheme {
                     "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.jsonLevel08Color.code,
                 },
             },
@@ -370,7 +347,6 @@ export class TextmateTheme {
                     "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.jsonLevel09Color.code,
                 },
             },
@@ -380,7 +356,6 @@ export class TextmateTheme {
                     "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.jsonLevel10Color.code,
                 },
             },
@@ -390,7 +365,6 @@ export class TextmateTheme {
                     "meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value meta.structure.dictionary.value support.type.property-name.json",
                 ],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.jsonLevel11Color.code,
                 },
             },
@@ -467,7 +441,6 @@ export class TextmateTheme {
             {
                 scope: ["entity.other.attribute-name", "meta.selector.css", "source.css.scss entity.name.tag.css"],
                 settings: {
-                    __italic: true,
                     foreground: this.palette.attributeNameColor.code,
                 },
             },
@@ -505,17 +478,6 @@ export class TextmateTheme {
                 },
             },
         ];
-        if (italic) {
-            return __classPrivateFieldGet(this, _TextmateTheme_instances, "m", _TextmateTheme_italic).call(this, rules);
-        }
         return rules;
     }
 }
-_TextmateTheme_instances = new WeakSet(), _TextmateTheme_italic = function _TextmateTheme_italic(theme) {
-    return theme.map((r) => {
-        if (r.settings.__italic) {
-            r.settings.fontStyle = "italic";
-        }
-        return r;
-    });
-};
