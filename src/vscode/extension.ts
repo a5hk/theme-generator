@@ -134,11 +134,11 @@ Each of these main variants, has a contrast version. Built using [Theme Generato
 
 ### JavaScript [(Night Coder Ember)]${this.previewURL("Night Coder Ember")}
 
-![javascript](/screenshot/n-javascript.png)
+![javascript](/screenshot/vscode-ember-javascript.png)
 
 ### Python [(Night Coder Flame)]${this.previewURL("Night Coder Flame")}
 
-![python](/screenshot/nw-python.png)
+![python](/screenshot/vscode-flame-python.png)
 
 ### JSON [(Night Coder Ash Contrast)]${this.previewURL("Night Coder Ash Contrast")}
 
