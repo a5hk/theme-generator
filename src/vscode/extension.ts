@@ -144,9 +144,9 @@ Each of these main variants, has a contrast version. Built using [Theme Generato
 
 ![json](/screenshot/vscode-ash-contrast-json.png)
 
-### JSON [(Night Coder Charcoal)]${this.previewURL("Night Coder Ash Charcoal")}
+### Ruby [(Night Coder Charcoal)]${this.previewURL("Night Coder Ash Charcoal")}
 
-![json](/screenshot/vscode-charcoal-ruby.png)
+![ruby](/screenshot/vscode-charcoal-ruby.png)
 
 ## License
 
