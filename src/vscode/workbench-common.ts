@@ -28,7 +28,7 @@ export function commonWorkbenchColors(palette: Palette): workbenchColor {
     "editor.findMatchBackground": /* .................. */ palette.background22.code,
     "editor.findMatchBorder": /* ...................... */ palette.activeIndentGuideBackground.code,
     "editor.findMatchHighlightBackground": /* ......... */ `${palette.background33.code}77`,
-    "editor.foldBackground": /* ....................... */ `${palette.statusBarBackground.code}1f`,
+    "editor.foldPlaceholderForeground": /* ............ */ palette.activeIndentGuideBackground.code,
     "editor.foreground": /* ........................... */ palette.foregroundColor.code,
     "editor.inlineValuesBackground": /* ............... */ palette.inlineValuesBackground.code,
     "editor.inlineValuesForeground": /* ............... */ palette.inlineValuesForeground.code,
