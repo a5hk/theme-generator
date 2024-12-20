@@ -41,7 +41,7 @@ export function commonWorkbenchColors(palette: Palette): workbenchColor {
     "editor.wordHighlightStrongBackground": /* .................. */ `${palette.backgroundbb.code}22`,
     "editor.wordHighlightStrongBorder": /* ...................... */ palette.background77.code,
     "editorActionList.background": /* ........................... */ palette.background11.code,
-    "editorActionList.focusFackground": /* ...................... */ palette.backgroundbb.code,
+    "editorActionList.focusForeground": /* ...................... */ palette.backgroundbb.code,
     "editorActionList.foreground": /* ........................... */ palette.backgroundaa.code,
     "editorBracketHighlight.foreground1": /* .................... */ palette.bracketPair1.code,
     "editorBracketHighlight.foreground2": /* .................... */ palette.bracketPair2.code,
