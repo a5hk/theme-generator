@@ -2,98 +2,96 @@ import { Palette } from "../common/colors.js";
 import { themeWriter } from "../common/theme-writer.js";
 
 export interface Token {
-  name: string;
+  classes: string[];
   color?: string;
+  name: string;
   "font-style"?: string;
   "font-weight"?: string;
-  classes: string[];
 }
 
 function hljsColors(palette: Palette): string {
   const tokens: Token[] = [
     {
-      name: "annotation",
-      color: palette.annotationColor.code,
       classes: ["meta"],
+      color: palette.annotationColor.code,
+      name: "annotation",
     },
     {
-      name: "comment",
-      color: palette.commentColor.code,
       classes: ["comment"],
+      color: palette.commentColor.code,
+      name: "comment",
     },
     {
-      name: "constant",
-      color: palette.constantColor.code,
       classes: ["variable.constant_", "variable.language_"],
+      color: palette.constantColor.code,
+      name: "constant",
     },
     {
-      name: "operator",
-      color: palette.operatorColor.code,
       classes: ["operator"],
+      color: palette.operatorColor.code,
+      name: "operator",
     },
     {
-      name: "documentation",
-      color: palette.documentationColor.code,
       classes: ["doctag"],
+      color: palette.documentationColor.code,
+      name: "documentation",
     },
     {
-      name: "function call",
-      color: palette.functionCallColor.code,
       classes: ["title.function_.invoke__"],
+      color: palette.functionCallColor.code,
+      name: "function call",
     },
     {
-      name: "function declaration",
-      color: palette.functionDeclarationColor.code,
       classes: ["title.function_"],
+      color: palette.functionDeclarationColor.code,
+      name: "function declaration",
     },
     {
-      name: "keyword",
-      color: palette.keywordColor.code,
       classes: ["keyword"],
+      color: palette.keywordColor.code,
+      name: "keyword",
     },
     {
-      name: "literal constant",
-      color: palette.literalConstantColor.code,
       classes: ["literal", "number", "symbol"],
+      color: palette.literalConstantColor.code,
+      name: "literal constant",
     },
     {
-      name: "default library",
-      color: palette.defaultLibraryClassTypeColor.code,
       classes: ["built_in"],
+      color: palette.defaultLibraryClassTypeColor.code,
+      name: "default library",
     },
     {
-      name: "class",
-      color: palette.namespaceClassStructColor.code,
       classes: ["title", "title.class_"],
+      color: palette.namespaceClassStructColor.code,
+      name: "class",
     },
     {
-      name: "parameter",
-      color: palette.parameterArgumentColor.code,
       classes: ["params"],
+      color: palette.parameterArgumentColor.code,
+      name: "parameter",
     },
     {
-      name: "property",
-      color: palette.propertyColor.code,
       classes: ["property"],
+      color: palette.propertyColor.code,
+      name: "property",
     },
     {
-      name: "string",
-      color: palette.stringColor.code,
       classes: ["string"],
+      color: palette.stringColor.code,
+      name: "string",
     },
     {
-      name: "type",
-      color: palette.typeColor.code,
       classes: ["type"],
+      color: palette.typeColor.code,
+      name: "type",
     },
     {
-      name: "variable",
-      color: palette.variableColor.code,
       classes: ["variable", "template-variable"],
+      color: palette.variableColor.code,
+      name: "variable",
     },
     {
-      name: "attribute",
-      color: palette.attributeNameColor.code,
       classes: [
         "attr",
         "attribute",
@@ -103,65 +101,70 @@ function hljsColors(palette: Palette): string {
         "selector-attr",
         "selector-pseudo",
       ],
+      color: palette.attributeNameColor.code,
+      name: "attribute",
     },
     {
-      name: "tag",
-      color: palette.tagColor.code,
       classes: ["tag", "template-tag"],
+      color: palette.tagColor.code,
+      name: "tag",
     },
     {
-      name: "heading",
-      color: palette.headingColor.code,
       classes: ["section"],
+      color: palette.headingColor.code,
+      name: "heading",
     },
     {
-      name: "bold",
-      "font-weight": "bold",
       classes: ["strong"],
+      "font-weight": "bold",
+      name: "bold",
     },
     {
-      name: "italic",
-      "font-style": "italic",
       classes: ["emphasis"],
+      "font-style": "italic",
+      name: "italic",
     },
     {
-      name: "punctuation",
-      color: palette.documentationColor.code,
       classes: ["punctuation"],
+      color: palette.documentationColor.code,
+      name: "punctuation",
     },
     {
-      name: "deletion",
-      color: palette.errorForeground.code,
       classes: ["deletion"],
+      color: palette.errorForeground.code,
+      name: "deletion",
     },
     {
-      name: "addition",
-      color: palette.activeIndentGuideBackground.code,
       classes: ["addition"],
+      color: palette.activeIndentGuideBackground.code,
+      name: "addition",
     },
     {
-      name: "other",
-      color: palette.foregroundColor.code,
       classes: ["subst"],
+      color: palette.foregroundColor.code,
+      name: "other",
     },
   ];
 
   return (
     tokens
       .map((x) => {
-        x.classes.map((e) => `.hljs-${e}`).join(",\n") + "{";
-        Object.entries(x).map((e) => {
-          if (e[0] !== "classes") {
-            `${e[0]}: ${e[1]}`;
-          }
-        });
-        +"}";
+        return (
+          x.classes.map((e) => `.hljs-${e}`).join(",\n") +
+          " {\n" +
+          Object.entries(x)
+            .map((e) => {
+              if (e[0] !== "classes" && e[0] !== "name") {
+                return `  ${e[0]}: ${e[1]};\n`;
+              }
+              return "";
+            })
+            .join("") +
+          "}"
+        );
       })
       .join("\n\n") +
-    `.hljs {
-            background: ${palette.background.code};
-            color: ${palette.foregroundColor.code};
-    }`
+    `\n\n.hljs {\n  background: ${palette.background.code};\n  color: ${palette.foregroundColor.code};\n}`
   );
 }
 
@@ -169,7 +172,7 @@ export function hljsColorScheme(palettes: Palette[], categories: string[]): void
   for (const cat of categories) {
     for (const p of palettes) {
       if (p.name.toLowerCase().replace(/ +/g, "-") === cat) {
-        themeWriter(`${cat}/vim/colors/${p.filename()}.vim`, hljsColors(p), "Vim color scheme generated.");
+        themeWriter(`${cat}/highlightjs/${p.filename()}.css`, hljsColors(p), "highlightjs color scheme generated.");
       }
     }
   }

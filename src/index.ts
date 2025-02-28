@@ -9,6 +9,7 @@ import { vscodeThemesWriter } from "./vscode/vscode.js";
 import { vimColorScheme } from "./vim/vim.js";
 import { batColorScheme } from "./bat/bat.js";
 import { windowsTerminalColorScheme } from "./windows-terminal/windows-terminal.js";
+import { hljsColorScheme } from "./highlightjs/hightlightjs.js";
 
 const palettes: Palette[] = [];
 palettes.push(new NightCoderEmberPalette());
@@ -23,3 +24,4 @@ vscodeThemesWriter(palettes, paletteCategories);
 vimColorScheme(palettes, paletteCategories);
 batColorScheme(palettes, paletteCategories);
 windowsTerminalColorScheme(palettes, paletteCategories);
+hljsColorScheme(palettes, paletteCategories);
