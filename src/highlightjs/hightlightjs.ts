@@ -47,12 +47,12 @@ function hljsColors(palette: Palette): string {
       name: "function declaration",
     },
     {
-      classes: ["keyword"],
+      classes: ["keyword", "meta .hljs-keyword"],
       color: palette.keywordColor.code,
       name: "keyword",
     },
     {
-      classes: ["literal", "number", "symbol"],
+      classes: ["literal", "number", "symbol", "regexp", "char.escape_"],
       color: palette.literalConstantColor.code,
       name: "literal constant",
     },
@@ -62,7 +62,7 @@ function hljsColors(palette: Palette): string {
       name: "default library",
     },
     {
-      classes: ["title", "title.class_"],
+      classes: ["title", "title.class_", "title.class_.inherited__"],
       color: palette.namespaceClassStructColor.code,
       name: "class",
     },
@@ -77,7 +77,7 @@ function hljsColors(palette: Palette): string {
       name: "property",
     },
     {
-      classes: ["string"],
+      classes: ["string", "meta .hljs-string"],
       color: palette.stringColor.code,
       name: "string",
     },
@@ -94,6 +94,7 @@ function hljsColors(palette: Palette): string {
     {
       classes: [
         "attr",
+        "tag .hljs-attr",
         "attribute",
         "selector-tag",
         "selector-id",
@@ -105,7 +106,7 @@ function hljsColors(palette: Palette): string {
       name: "attribute",
     },
     {
-      classes: ["tag", "template-tag"],
+      classes: ["tag", "template-tag", "tag .hljs-name", "name"],
       color: palette.tagColor.code,
       name: "tag",
     },
@@ -120,7 +121,7 @@ function hljsColors(palette: Palette): string {
       name: "bold",
     },
     {
-      classes: ["emphasis"],
+      classes: ["emphasis", "quote"],
       "font-style": "italic",
       name: "italic",
     },
@@ -143,6 +144,26 @@ function hljsColors(palette: Palette): string {
       classes: ["subst"],
       color: palette.foregroundColor.code,
       name: "other",
+    },
+    {
+      classes: ["bullet"],
+      color: palette.parameterArgumentColor.code,
+      name: "bullet",
+    },
+    {
+      classes: ["link"],
+      color: palette.linkTagColor.code,
+      name: "link",
+    },
+    {
+      classes: ["formula"],
+      color: palette.annotationColor.code,
+      name: "formula",
+    },
+    {
+      classes: ["code"],
+      color: palette.documentationColor.code,
+      name: "code",
     },
   ];
 
