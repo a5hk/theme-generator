@@ -5,6 +5,7 @@ export function contrastWorkbenchColors(palette: Palette): workbenchColor {
   const colors: workbenchColor = {
     "activityBar.border": /* ................. */ palette.background22.code,
     "breadcrumb.background": /* .............. */ palette.background.code,
+    "diffEditor.border": /* .................. */ palette.background22.code,
     "editorGroup.border": /* ................. */ palette.background22.code,
     "editorGroupHeader.tabsBackground": /* ... */ palette.contrastBackground.code,
     "editorGroupHeader.tabsBorder": /* ....... */ palette.background22.code,
